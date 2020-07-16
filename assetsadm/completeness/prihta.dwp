@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Jun 2020 pada 15.52
+-- Waktu pembuatan: 16 Jul 2020 pada 15.42
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.2.27
 
@@ -19,36 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_techno`
+-- Database: `db_cp`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_agenda`
---
-
-CREATE TABLE `tbl_agenda` (
-  `agenda_id` int(11) NOT NULL,
-  `agenda_nama` varchar(200) DEFAULT NULL,
-  `agenda_tanggal` timestamp NULL DEFAULT current_timestamp(),
-  `agenda_deskripsi` text DEFAULT NULL,
-  `agenda_mulai` date DEFAULT NULL,
-  `agenda_selesai` date DEFAULT NULL,
-  `agenda_tempat` varchar(90) DEFAULT NULL,
-  `agenda_waktu` varchar(30) DEFAULT NULL,
-  `agenda_keterangan` varchar(200) DEFAULT NULL,
-  `agenda_author` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tbl_agenda`
---
-
-INSERT INTO `tbl_agenda` (`agenda_id`, `agenda_nama`, `agenda_tanggal`, `agenda_deskripsi`, `agenda_mulai`, `agenda_selesai`, `agenda_tempat`, `agenda_waktu`, `agenda_keterangan`, `agenda_author`) VALUES
-(1, 'Penyembelihan Hewan Kurban Idul Adha 2017', '2017-01-22 06:18:01', 'Idul Adha yang biasa disebut lebaran haji atapun lebaran kurban sangat identik dengan penyembelihan hewan kurban. M-Sekolah tahun ini juga melakukan penyembelihan hewan kurban. Yang rencananya akan dihadiri oleh guru-guru, siswa dan pengurus OSIS.', '2017-01-22', '2017-01-22', 'M-Sekolah', '08.00 - 11.00 WIB', 'Dihadiri oleh guru-guru, siswa dan pengurus OSIS', 'M Fikri Setiadi'),
-(2, 'Peluncuran Website Resmi M-Sekolah', '2017-01-22 06:26:33', 'Peluncuran website resmi  M-Sekolah, sebagai media informasi dan akademik online untuk pelayanan pendidikan yang lebih baik kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat.', '2017-01-04', '2017-01-04', 'M-Sekolah', '07.30 - 12.00 WIB', '-', 'M Fikri Setiadi'),
-(3, 'Penerimaan Raport Semester Ganjil Tahun Ajaran 2017-2018', '2017-01-22 06:29:49', 'Berakhirnya semester ganjil tahun pelajaran 2016-2017, ditandai dengan pembagian laporan hasil belajar.', '2017-02-17', '2017-02-17', 'M-Sekolah', '07.30 - 12.00 WIB', 'Untuk kelas XI dan XII, pembagian raport dimulai pukul 07.30 WIB. Sedangkan untuk kelas X pada pukul 09.00 WIB. Raport diambil oleh orang tua/wali murid masing-masing.', 'M Fikri Setiadi');
 
 -- --------------------------------------------------------
 
@@ -72,61 +44,6 @@ CREATE TABLE `tbl_album` (
 
 INSERT INTO `tbl_album` (`album_id`, `album_nama`, `album_tanggal`, `album_pengguna_id`, `album_author`, `album_count`, `album_cover`) VALUES
 (4, 'Utama', '2017-01-24 01:31:13', 1, 'Administrator', 9, 'ee2385745946958ea6bb2e13673c1261.JPG');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_faq`
---
-
-CREATE TABLE `tbl_faq` (
-  `id` int(11) NOT NULL,
-  `pertanyaan` varchar(100) NOT NULL,
-  `jawaban` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `tbl_faq`
---
-
-INSERT INTO `tbl_faq` (`id`, `pertanyaan`, `jawaban`) VALUES
-(1, 'Jam berapa tgi buka ?', 'jam 11'),
-(2, 'berapa tinggi komarenang', '25 m'),
-(3, 'madang urung ?', 'uwis'),
-(4, 'joss', 'banget');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_files`
---
-
-CREATE TABLE `tbl_files` (
-  `file_id` int(11) NOT NULL,
-  `file_judul` varchar(120) DEFAULT NULL,
-  `file_deskripsi` text DEFAULT NULL,
-  `file_tanggal` timestamp NULL DEFAULT current_timestamp(),
-  `file_oleh` varchar(60) DEFAULT NULL,
-  `file_download` int(11) DEFAULT 0,
-  `file_data` varchar(120) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tbl_files`
---
-
-INSERT INTO `tbl_files` (`file_id`, `file_judul`, `file_deskripsi`, `file_tanggal`, `file_oleh`, `file_download`, `file_data`) VALUES
-(2, 'Dasar-dasar CSS', 'Modul dasar-dasar CSS 3. Modul ini membantu anda untuk memahami struktur dasar CSS', '2017-01-23 04:30:01', 'Drs. Joko', 0, 'ab9a183ff240deadbedaff78e639af2f.pdf'),
-(3, '14 Teknik Komunikasi Yang Paling Efektif', 'Ebook 14 teknik komunikasi paling efektif membantu anda untuk berkomunikasi dengan baik dan benar', '2017-01-23 15:26:06', 'Drs. Joko', 0, 'ab2cb34682bd94f30f2347523112ffb9.pdf'),
-(4, 'Bagaimana Membentuk Pola Pikir yang Baru', 'Ebook ini membantu anda membentuk pola pikir baru.', '2017-01-23 15:27:07', 'Drs. Joko', 0, '30f588eb5c55324f8d18213f11651855.pdf'),
-(5, '7 Tips Penting mengatasi Kritik', '7 Tips Penting mengatasi Kritik', '2017-01-23 15:27:44', 'Drs. Joko', 0, '329a62b25ad475a148e1546aa3db41de.docx'),
-(6, '8 Racun dalam kehidupan kita', '8 Racun dalam kehidupan kita', '2017-01-23 15:28:17', 'Drs. Joko', 0, '8e38ad4948ba13758683dea443fbe6be.docx'),
-(7, 'Jurnal Teknolgi Informasi', 'Jurnal Teknolgi Informasi', '2017-01-25 03:18:53', 'Gunawan, S.Pd', 0, '87ae0f009714ddfdd79e2977b2a64632.pdf'),
-(8, 'Jurnal Teknolgi Informasi 2', 'Jurnal Teknolgi Informasi', '2017-01-25 03:19:22', 'Gunawan, S.Pd', 0, 'c4e966ba2c6e142155082854dc5b3602.pdf'),
-(9, 'Naskah Publikasi IT', 'Naskah Teknolgi Informasi', '2017-01-25 03:21:04', 'Gunawan, S.Pd', 0, '71380b3cf16a17a02382098c028ece9c.pdf'),
-(10, 'Modul Teknologi Informasi', 'Modul Teknologi Informasi', '2017-01-25 03:22:08', 'Gunawan, S.Pd', 0, '029143a3980232ab2900d94df36dbb0c.pdf'),
-(11, 'Modul Teknologi Informasi Part II', 'Modul Teknologi Informasi', '2017-01-25 03:22:54', 'Gunawan, S.Pd', 0, 'ea8f3f732576083156e509657614f551.pdf'),
-(12, 'Modul Teknologi Informasi Part III', 'Modul Teknologi Informasi', '2017-01-25 03:23:21', 'Gunawan, S.Pd', 0, 'c5e5e7d16e4cd6c3d22c11f64b0db2af.pdf');
 
 -- --------------------------------------------------------
 
@@ -157,7 +74,9 @@ INSERT INTO `tbl_galeri` (`galeri_id`, `galeri_judul`, `galeri_tanggal`, `galeri
 (17, 'Sehat dengan Aerobic', '2017-01-24 01:33:08', '6b066eafcad4e571d132bb671a66db87.JPG', 4, 1, 'Administrator'),
 (18, 'Kebersamaan', '2017-01-24 01:33:24', '5b2e97cff6527e4be5b5a48140ab6db7.JPG', 4, 1, 'Administrator'),
 (19, 'View ', '2017-08-08 00:54:58', 'ab772779795e1682907bce42b1aadea9.JPG', 4, 1, 'Administrator'),
-(20, 'Beranda Tirta', '2020-04-05 13:54:17', 'ae4550988a0801ca5363a1a34d2fb99c.JPG', 4, 1, 'Administrator');
+(20, 'Beranda Tirta', '2020-04-05 13:54:17', 'ae4550988a0801ca5363a1a34d2fb99c.JPG', 4, 1, 'Administrator'),
+(21, 'gfgf', '2020-07-16 13:09:23', 'cd81d0c0079c4f6799f030e9566d778b.png', 1, 1, 'Administrator'),
+(22, 'gfgf', '2020-07-16 13:09:47', 'b9ede4b9be585b8e7788fcdecd5afd2c.png', 1, 1, 'Administrator');
 
 -- --------------------------------------------------------
 
@@ -181,29 +100,6 @@ CREATE TABLE `tbl_inbox` (
 
 INSERT INTO `tbl_inbox` (`inbox_id`, `inbox_nama`, `inbox_email`, `inbox_kontak`, `inbox_pesan`, `inbox_tanggal`, `inbox_status`) VALUES
 (11, 'Monika dwi ramadhan', 'superdigna.cloth@gmail.com', NULL, 'ertretfr', '2020-04-05 14:08:39', 0),
-(12, 'Lodang Sutikno', 'dwe_x@rocketmail.com', NULL, 'hey tayo', '2020-04-05 14:53:00', 0),
-(19, 'zuxxy', 'dwe_x@rocketmail.com', NULL, 'sdsds', '2020-04-05 15:03:17', 0),
-(20, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'fw', '2020-04-05 15:04:34', 0),
-(21, 'ewds', 'dwe_x@rocketmail.com', NULL, 'sds', '2020-04-05 15:04:59', 0),
-(22, 'qsaasas', 'dwe_x@rocketmail.com', NULL, 'asa', '2020-04-05 15:05:41', 0),
-(23, 'qsaasas', 'dwe_x@rocketmail.com', NULL, 'asa', '2020-04-05 15:05:55', 0),
-(24, 'adaada', 'prihtapambudi@gmal.com', NULL, 'asa', '2020-04-05 15:06:07', 0),
-(25, 'asaasas', 'dwe_x@rocketmail.com', NULL, 'adsasas', '2020-04-05 15:06:47', 0),
-(26, 'asaasas', 'dwe_x@rocketmail.com', NULL, 'adsasas', '2020-04-05 15:06:51', 0),
-(27, 'asaasas', 'dwe_x@rocketmail.com', NULL, 'adsasas', '2020-04-05 15:07:05', 0),
-(29, 'Monika dwi ramadhan', 'dwe_x@rocketmail.com', NULL, 'qeqeq', '2020-04-05 15:07:51', 0),
-(30, 'Monika dwi ramadhan', 'dwe_x@rocketmail.com', NULL, 'qeqeq', '2020-04-05 15:07:52', 0),
-(31, 'Monika dwi ramadhan', 'dwe_x@rocketmail.com', NULL, 'qeqeq', '2020-04-05 15:07:53', 0),
-(32, 'Monika dwi ramadhan', 'dwe_x@rocketmail.com', NULL, 'qeqeq', '2020-04-05 15:07:53', 0),
-(33, 'Monika dwi ramadhan', 'dwe_x@rocketmail.com', NULL, 'qeqeq', '2020-04-05 15:07:53', 0),
-(34, 'Monika dwi ramadhan', 'dwe_x@rocketmail.com', NULL, 'qeqeq', '2020-04-05 15:07:54', 0),
-(35, 'Monika dwi ramadhan', 'dwe_x@rocketmail.com', NULL, 'qeqeq', '2020-04-05 15:07:54', 0),
-(36, 'Monika dwi ramadhan', 'dwe_x@rocketmail.com', NULL, 'qeqeq', '2020-04-05 15:07:54', 0),
-(37, 'A. Citra Sandi Purnama, ST', 'prihtapambudi@gmal.com', NULL, 'wrew', '2020-04-05 15:09:15', 0),
-(38, 'A. Citra Sandi Purnama, ST', 'prihtapambudi@gmal.com', NULL, 'wrew', '2020-04-05 15:09:16', 0),
-(40, 'A. Citra Sandi Purnama, ST', 'prihtapambudi@gmal.com', NULL, 'wrew', '2020-04-05 15:09:16', 0),
-(41, 'A. Citra Sandi Purnama, ST', 'prihtapambudi@gmal.com', NULL, 'wrew', '2020-04-05 15:09:17', 0),
-(55, 'ZUXXY BTR', 'dwe_x@rocketmail.com', NULL, 'ADAS', '2020-04-09 13:01:22', 0),
 (56, 'A. Citra Sandi Purnama, ST', 'user@gmail.com', NULL, 'ai', '2020-05-31 03:34:16', 0);
 
 -- --------------------------------------------------------
@@ -227,7 +123,8 @@ INSERT INTO `tbl_kategori` (`kategori_id`, `kategori_nama`, `kategori_tanggal`) 
 (9, 'Tips & Trik', '2020-05-31 04:07:08'),
 (10, 'Event', '2020-05-31 04:07:14'),
 (11, 'Kunjungan', '2020-05-31 04:07:21'),
-(12, 'Blog', '2020-05-31 04:07:33');
+(12, 'Blog', '2020-05-31 04:07:33'),
+(13, 'Lain-Lain', '2020-07-16 12:57:29');
 
 -- --------------------------------------------------------
 
@@ -246,22 +143,6 @@ CREATE TABLE `tbl_komentar` (
   `komentar_tulisan_id` int(11) DEFAULT NULL,
   `komentar_parent` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tbl_komentar`
---
-
-INSERT INTO `tbl_komentar` (`komentar_id`, `komentar_nama`, `komentar_email`, `komentar_web`, `komentar_isi`, `komentar_tanggal`, `komentar_status`, `komentar_tulisan_id`, `komentar_parent`) VALUES
-(1, 'M Fikri Setiadi', 'setiadi@mfikri.com', 'mfikri.com', 'Ping!', '2017-07-19 01:33:07', 1, 20, 0),
-(4, 'M Fikri Setiadi', 'setiadi@mfikri.com', 'mfikri.com', 'Nice Post :)', '2017-07-19 01:43:39', 1, 20, 0),
-(5, 'M Fikri Setiadi', 'setiadi@mfikri.com', 'mfikri.com', '[removed]alert&amp;#40;No Found !&amp;#41;;[removed]', '2017-07-19 01:35:28', 0, 20, 2),
-(6, 'Jokowi', 'joko@gmail.com', '', 'Ping !', '2017-07-19 02:48:24', 0, 20, 2),
-(7, 'M Fikri Setiadi', NULL, NULL, 'Can I help you?', '2017-08-03 15:11:21', 1, 20, 1),
-(8, 'M Fikri Setiadi', NULL, NULL, 'Thank you.', '2017-08-03 15:27:56', 1, 20, 4),
-(9, 'Administrator', NULL, NULL, 'yap', '2020-03-22 13:22:03', 1, 20, 4),
-(10, 'Administrator', NULL, NULL, '5', '2020-03-25 07:43:13', 1, 20, 1),
-(11, 'Administrator', NULL, NULL, 'ya', '2020-04-05 14:12:01', 1, 20, 1),
-(12, 'Administrator', NULL, NULL, 'xcvxc', '2020-05-31 04:05:35', 1, 20, 1);
 
 -- --------------------------------------------------------
 
@@ -310,7 +191,7 @@ CREATE TABLE `tbl_pengguna` (
 --
 
 INSERT INTO `tbl_pengguna` (`pengguna_id`, `pengguna_nama`, `pengguna_moto`, `pengguna_jenkel`, `pengguna_username`, `pengguna_password`, `pengguna_tentang`, `pengguna_email`, `pengguna_nohp`, `pengguna_facebook`, `pengguna_twitter`, `pengguna_linkdin`, `pengguna_google_plus`, `pengguna_status`, `pengguna_level`, `pengguna_register`, `pengguna_photo`) VALUES
-(1, 'Administrator', 'Just do it', 'L', 'admin', '21232f297a57a5a743894a0e4a801fc3', '-', 'fikrifiver97@gmail.com', '081277159401', 'facebook.com/m_fikri_setiadi', 'twitter.com/fiver_fiver', '', '', 1, '1', '2016-09-03 06:07:55', '028e660076020b7603d78292fd2b0a07.jpg');
+(1, 'Administrator', '', 'L', 'admin', '21232f297a57a5a743894a0e4a801fc3', '-', 'ronisogol@gmail.com', '+62 857-1383-3040', '', '', '', '', 1, '1', '2016-09-03 06:07:55', '19740201d6807a1b2e0f5d02d3921893.jpg');
 
 -- --------------------------------------------------------
 
@@ -1296,8 +1177,7 @@ INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung
 (963, '2020-05-17 07:29:40', '::1', 'Chrome'),
 (964, '2020-05-23 04:25:20', '::1', 'Chrome'),
 (965, '2020-05-31 02:46:52', '::1', 'Chrome'),
-(966, '2020-06-05 00:35:11', '::1', 'Chrome'),
-(967, '2020-06-07 01:44:30', '::1', 'Chrome');
+(966, '2020-07-16 12:47:16', '::1', 'Chrome');
 
 -- --------------------------------------------------------
 
@@ -1319,136 +1199,14 @@ CREATE TABLE `tbl_portfolio` (
 --
 
 INSERT INTO `tbl_portfolio` (`port_id`, `port_judul`, `port_deskripsi`, `port_tanggal`, `port_author`, `port_image`) VALUES
-(1, 'Kolam Ikan', '<p>M-Food merupakan aplikasi yang dirancang khusus untuk order makanan online berbasis web mobile. Dirancang dengan menggunakan jquery mobile dan codeigniter dengan icon dari font awesome sehingga mudah dikembangkan oleh developer manapun.</p>\r\n\r\n<p>Aplikasi ini mengelompokkan menu berdasarkan makanan, minuman, hot promo, dan favorit.</p>\r\n\r\n<p>Adapun fitur dari aplikasi ini adalah sebagai berikut:</p>\r\n\r\n<p>1 Dashboard (Grafik Penjualan, Garfik Pelanggan, Lates Order, Lates Pelanggan)</p>\r\n\r\n<p>2 Management Pengguna</p>\r\n\r\n<p>3 Management Menu (Makanan/Minuman)</p>\r\n\r\n<p>4 Management Pelanggan</p>\r\n\r\n<p>5 Management Order</p>\r\n\r\n<p>6 Management Konfirmasi Pembayaran</p>\r\n\r\n<p>7 Management Rekening Bank</p>\r\n\r\n<p>8 Management Gallery</p>\r\n\r\n<p>9 Management Status Order</p>\r\n\r\n<p>Info lebih lebih lanjut kunjungi www.mfikri.com</p>\r\n', '2017-07-20 03:53:59', 'Administrator', '7dfe34f9d4894f0f2e621647e2e9c29c.JPG'),
-(3, 'Guwa Wisata', '<p>Aplikasi Point of sale merupakan sebuah aplikasi yang dirancang khusus untuk mempermudah dan mempercepat proses transakasi penjualan. Dirancang menggunakan framework Codeigniter dengan konsep metro design yang elegan menjadi daya tarik aplikasi ini. Selain itu, basic design dari aplikasi ini menggunakan BOOTSTRAP sehingga memudahkan web developer untuk mengembangkan design aplikasi ini menjadi lebih menarik lagi.</p>\r\n\r\n<p>Proses transakasi penjualan dan pembelian menggunakan AJAX &nbsp;(<em>Asyncronous Javascript and XML</em>). Memungkinkan user berkomunikasi dengan database tanpa <em>reload page</em>.</p>\r\n\r\n<p>Adapun fitur dari aplikasi ini sebagai berikut:</p>\r\n\r\n<p>1. Management data barang</p>\r\n\r\n<p>2. Management data kategori</p>\r\n\r\n<p>3. Management User (Pengguna)</p>\r\n\r\n<p>4. Management Suplier</p>\r\n\r\n<p>5. Transaksi Pembelian</p>\r\n\r\n<p>7. Transaksi Penjualan Eceran dan Grosir</p>\r\n\r\n<p>8. Retur Penjualan</p>\r\n\r\n<p>9. Laporan Data Barang</p>\r\n\r\n<p>10. Laporan Stok Barang</p>\r\n\r\n<p>11. Laporan Penjualan</p>\r\n\r\n<p>12. Laporan Penjualan Per Tanggal</p>\r\n\r\n<p>13. Laporan Penjualan Per Bulan</p>\r\n\r\n<p>14. Laporan Penjualan Per Tahun</p>\r\n\r\n<p>15. Laporan Laba / Rugi</p>\r\n\r\n<p>16. Grafik Stok Barang</p>\r\n\r\n<p>17. Grafik Penjualan Per Bulan</p>\r\n\r\n<p>18. Grafik Penjualan Per Tahun</p>\r\n', '2017-07-20 07:23:14', 'Administrator', '234719d2abbae42e83b333d9dd2a2731.JPG'),
-(4, 'Restaurant', '<p>Download source code Tour and Travel. M-Travel merupakan Source Code Open Source berbasis web untuk company profil tour and travel yang menyajikan informasi dan paket wisata pilihan. Dimana para wisatawan dapat membooking paket wisata yang diinginkan secara online. Source Code ini mendukung berbagai macam metode pembayaran, dan lebih lagi metode pembayaran dapat ditambahkan sesuai kebutuhan.</p>\r\n\r\n<p>Source Code ini dibangun menggunakan PHP framework Codeigniter v2.2.6, dirancang menggunakan bahasa pemrograman umum sehingga code program mudah dipelajari oleh developer web lain sehingga mudah untuk dikembangkan oleh pihak lain.</p>\r\n\r\n<p>Selain itu, source code ini tidak menggunakan Active Record, sehingga semua query mudah dibaca dan di pelajari.</p>\r\n\r\n<p>Backend dari Source Code ini dibangun menggunakan template Admin LTE, yaitu template yang sangat umum bagi developer web saat ini. Selain itu, source code ini juga menggunakan <strong>Toast Message</strong> untuk menampilkan pesan. Hal itulah yang membuat souce code ini menjadi &ldquo;Pretty Awesome&rdquo;.</p>\r\n\r\n<p>Frontend dari source code ini dibangun menggunakan premium template. Dalam arti kata template BERBAYAR. Hhmm.., beruntunglah Anda bisa menemukan source code ini, karena penulis membagikan tidak hanya templatenya, akan tetapi program komplit secara Cuma-Cuma alias GRATISS.</p>\r\n', '2017-07-20 07:25:06', 'Administrator', '7d134d63a2c679d52d185bdb9fbfd6c0.JPG'),
-(5, 'Outbond Arena', '<p>Ini adalah deskripsi. Ini adalah deskripsi. Ini adalah deskripsi. Ini adalah deskripsi. Ini adalah deskripsi. Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.</p>\r\n\r\n<p>Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.</p>\r\n', '2017-08-29 13:29:02', 'Administrator', '6a2e1a4216295e37dbdcd73b0b2a8a88.JPG'),
-(6, 'Aerobic Arena', '<p>Ini adalah deskripsi&nbsp;Ini adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsi&nbsp;Ini adalah deskripsi&nbsp;Ini adalah deskripsi&nbsp;Ini adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsi&nbsp;Ini adalah deskripsi&nbsp;Ini adalah deskripsi.</p>\r\n\r\n<p>Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi.</p>\r\n', '2017-08-29 13:31:55', 'Administrator', '46c5158608bc5531f195cde8461c7dc9.JPG'),
-(7, 'Water Boom', '<p>Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi.</p>\r\n\r\n<p>Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi.</p>\r\n\r\n<p>Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi.</p>\r\n', '2017-08-29 13:33:57', 'Administrator', '23fc6c5e6ea16b5995ab6b4684d1ef43.JPG'),
-(8, 'Kolam Renang Anak', '<p>deswds</p>\r\n', '2020-04-05 13:21:58', 'Administrator', '730f89863a60c419bf228aebe570cd21.JPG'),
-(9, 'Kolam Renang Utama', '<p>Kolam renang Utamfgghfhg</p>\r\n', '2020-04-05 13:55:24', 'Administrator', 'c332ee189dd2ec61528e4d8db067b6f4.JPG');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_post_rating`
---
-
-CREATE TABLE `tbl_post_rating` (
-  `rate_id` int(11) NOT NULL,
-  `rate_tanggal` timestamp NULL DEFAULT current_timestamp(),
-  `rate_ip` varchar(40) DEFAULT NULL,
-  `rate_point` int(11) DEFAULT NULL,
-  `rate_tulisan_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tbl_post_rating`
---
-
-INSERT INTO `tbl_post_rating` (`rate_id`, `rate_tanggal`, `rate_ip`, `rate_point`, `rate_tulisan_id`) VALUES
-(2, '2017-08-07 05:58:14', '::1', 1, 30),
-(4, '2017-08-07 05:59:03', '::1', 1, 29),
-(5, '2017-08-07 06:23:40', '::1', 3, 31),
-(6, '2017-08-07 06:26:14', '::1', 4, 28),
-(7, '2017-08-08 01:15:56', '::1', 2, 27),
-(8, '2017-08-25 18:20:57', '::1', 4, 26);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_post_views`
---
-
-CREATE TABLE `tbl_post_views` (
-  `views_id` int(11) NOT NULL,
-  `views_tanggal` timestamp NULL DEFAULT current_timestamp(),
-  `views_ip` varchar(40) DEFAULT NULL,
-  `views_tulisan_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tbl_post_views`
---
-
-INSERT INTO `tbl_post_views` (`views_id`, `views_tanggal`, `views_ip`, `views_tulisan_id`) VALUES
-(1, '2017-08-07 07:28:38', '::1', 31),
-(2, '2017-08-07 07:28:51', '::1', 30),
-(3, '2017-08-07 13:08:57', '::1', 27),
-(4, '2017-08-07 15:55:32', '::1', 28),
-(5, '2017-08-07 16:02:55', '::1', 29),
-(6, '2017-08-08 00:58:17', '::1', 26),
-(7, '2017-08-08 01:13:58', '::1', 27),
-(8, '2017-08-08 01:16:07', '::1', 30),
-(9, '2017-08-09 13:04:36', '::1', 30),
-(10, '2017-08-11 06:56:47', '::1', 31),
-(11, '2017-08-11 08:42:41', '::1', 30),
-(12, '2017-08-11 08:42:47', '::1', 27),
-(13, '2017-08-11 08:42:54', '::1', 26),
-(14, '2017-08-11 08:43:00', '::1', 28),
-(15, '2017-08-11 08:43:07', '::1', 25),
-(16, '2017-08-11 08:43:10', '::1', 29),
-(17, '2017-08-24 16:39:13', '::1', 31),
-(18, '2017-08-24 16:39:13', '::1', 0),
-(19, '2017-08-24 16:39:13', '::1', 0),
-(20, '2017-08-24 16:39:13', '::1', 0),
-(21, '2017-08-24 17:00:21', '::1', 31),
-(22, '2017-08-24 17:00:22', '::1', 0),
-(23, '2017-08-25 13:49:50', '::1', 30),
-(24, '2017-08-25 17:22:19', '::1', 30),
-(25, '2017-08-25 17:22:20', '::1', 0),
-(26, '2017-08-25 17:25:14', '::1', 27),
-(27, '2017-08-25 17:27:37', '::1', 26),
-(28, '2017-08-25 17:45:38', '::1', 25),
-(29, '2017-08-25 17:54:57', '::1', 29),
-(30, '2017-08-25 18:18:38', '::1', 31),
-(31, '2017-08-25 18:19:02', '::1', 28),
-(32, '2017-08-27 12:43:48', '::1', 30),
-(33, '2017-08-27 12:43:49', '::1', 0),
-(34, '2017-08-28 07:35:26', '::1', 31),
-(35, '2017-08-29 03:13:08', '::1', 30),
-(36, '2017-08-29 03:13:09', '::1', 0),
-(37, '2017-08-29 03:13:16', '::1', 29),
-(38, '2017-08-29 13:44:05', '::1', 31),
-(39, '2017-09-01 13:52:01', '::1', 30),
-(40, '2017-09-01 13:52:01', '::1', 0),
-(41, '2017-09-01 14:00:27', '::1', 25),
-(42, '2017-09-02 04:50:46', '::1', 31),
-(43, '2017-09-02 04:50:46', '::1', 0),
-(44, '2017-09-02 04:51:23', '::1', 28),
-(45, '2017-10-08 00:25:57', '::1', 25),
-(46, '2017-10-08 00:25:57', '::1', 0),
-(47, '2017-10-16 03:19:53', '::1', 31),
-(48, '2017-10-16 03:19:54', '::1', 0),
-(49, '2017-10-16 03:20:18', '::1', 25),
-(50, '2017-10-28 00:13:13', '::1', 30),
-(51, '2017-10-28 00:13:14', '::1', 0),
-(52, '2017-10-29 04:16:58', '::1', 30),
-(53, '2017-10-29 04:16:59', '::1', 0),
-(54, '2017-10-29 04:23:42', '::1', 31),
-(55, '2020-03-11 15:40:11', '::1', 29),
-(56, '2020-03-11 15:40:12', '::1', 0),
-(57, '2020-03-11 15:40:16', '::1', 26),
-(58, '2020-03-11 15:40:24', '::1', 30),
-(59, '2020-03-25 04:38:24', '::1', 29),
-(60, '2020-03-25 04:38:25', '::1', 0),
-(61, '2020-03-29 11:11:36', '::1', 30),
-(62, '2020-03-29 11:11:36', '::1', 0),
-(63, '2020-03-29 11:12:28', '::1', 31);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_testimoni`
---
-
-CREATE TABLE `tbl_testimoni` (
-  `testimoni_id` int(11) NOT NULL,
-  `testimoni_nama` varchar(30) DEFAULT NULL,
-  `testimoni_isi` varchar(120) DEFAULT NULL,
-  `testimoni_email` varchar(35) DEFAULT NULL,
-  `testimoni_tanggal` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(1, 'Kolam Ikan', NULL, '2017-07-20 03:53:59', 'Administrator', '7dfe34f9d4894f0f2e621647e2e9c29c.JPG'),
+(3, 'Guwa Wisata', NULL, '2017-07-20 07:23:14', 'Administrator', '234719d2abbae42e83b333d9dd2a2731.JPG'),
+(4, 'Restaurant', NULL, '2017-07-20 07:25:06', 'Administrator', '7d134d63a2c679d52d185bdb9fbfd6c0.JPG'),
+(5, 'Outbond Arena', NULL, '2017-08-29 13:29:02', 'Administrator', '6a2e1a4216295e37dbdcd73b0b2a8a88.JPG'),
+(6, 'Aerobic Arena', NULL, '2017-08-29 13:31:55', 'Administrator', '46c5158608bc5531f195cde8461c7dc9.JPG'),
+(7, 'Water Boom', NULL, '2017-08-29 13:33:57', 'Administrator', '23fc6c5e6ea16b5995ab6b4684d1ef43.JPG'),
+(8, 'Kolam Renang Anak', NULL, '2020-04-05 13:21:58', 'Administrator', '730f89863a60c419bf228aebe570cd21.JPG'),
+(9, 'Kolam Renang Utama', NULL, '2020-04-05 13:55:24', 'Administrator', 'c332ee189dd2ec61528e4d8db067b6f4.JPG');
 
 -- --------------------------------------------------------
 
@@ -1487,29 +1245,11 @@ INSERT INTO `tbl_tulisan` (`tulisan_id`, `tulisan_judul`, `tulisan_isi`, `tulisa
 --
 
 --
--- Indeks untuk tabel `tbl_agenda`
---
-ALTER TABLE `tbl_agenda`
-  ADD PRIMARY KEY (`agenda_id`);
-
---
 -- Indeks untuk tabel `tbl_album`
 --
 ALTER TABLE `tbl_album`
   ADD PRIMARY KEY (`album_id`),
   ADD KEY `album_pengguna_id` (`album_pengguna_id`);
-
---
--- Indeks untuk tabel `tbl_faq`
---
-ALTER TABLE `tbl_faq`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `tbl_files`
---
-ALTER TABLE `tbl_files`
-  ADD PRIMARY KEY (`file_id`);
 
 --
 -- Indeks untuk tabel `tbl_galeri`
@@ -1564,24 +1304,6 @@ ALTER TABLE `tbl_portfolio`
   ADD PRIMARY KEY (`port_id`);
 
 --
--- Indeks untuk tabel `tbl_post_rating`
---
-ALTER TABLE `tbl_post_rating`
-  ADD PRIMARY KEY (`rate_id`);
-
---
--- Indeks untuk tabel `tbl_post_views`
---
-ALTER TABLE `tbl_post_views`
-  ADD PRIMARY KEY (`views_id`);
-
---
--- Indeks untuk tabel `tbl_testimoni`
---
-ALTER TABLE `tbl_testimoni`
-  ADD PRIMARY KEY (`testimoni_id`);
-
---
 -- Indeks untuk tabel `tbl_tulisan`
 --
 ALTER TABLE `tbl_tulisan`
@@ -1594,34 +1316,16 @@ ALTER TABLE `tbl_tulisan`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_agenda`
---
-ALTER TABLE `tbl_agenda`
-  MODIFY `agenda_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT untuk tabel `tbl_album`
 --
 ALTER TABLE `tbl_album`
   MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_faq`
---
-ALTER TABLE `tbl_faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT untuk tabel `tbl_files`
---
-ALTER TABLE `tbl_files`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
 -- AUTO_INCREMENT untuk tabel `tbl_galeri`
 --
 ALTER TABLE `tbl_galeri`
-  MODIFY `galeri_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `galeri_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_inbox`
@@ -1633,7 +1337,7 @@ ALTER TABLE `tbl_inbox`
 -- AUTO_INCREMENT untuk tabel `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
-  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_komentar`
@@ -1651,43 +1355,25 @@ ALTER TABLE `tbl_log_aktivitas`
 -- AUTO_INCREMENT untuk tabel `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
-  MODIFY `pengguna_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pengguna_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_pengunjung`
 --
 ALTER TABLE `tbl_pengunjung`
-  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=968;
+  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=967;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_portfolio`
 --
 ALTER TABLE `tbl_portfolio`
-  MODIFY `port_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT untuk tabel `tbl_post_rating`
---
-ALTER TABLE `tbl_post_rating`
-  MODIFY `rate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT untuk tabel `tbl_post_views`
---
-ALTER TABLE `tbl_post_views`
-  MODIFY `views_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
-
---
--- AUTO_INCREMENT untuk tabel `tbl_testimoni`
---
-ALTER TABLE `tbl_testimoni`
-  MODIFY `testimoni_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `port_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_tulisan`
 --
 ALTER TABLE `tbl_tulisan`
-  MODIFY `tulisan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `tulisan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -130,11 +130,12 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <input type="hidden" name="xalbum" value="4" required/>
+                                    <!-- <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Album</label>
                                         <div class="col-sm-7">
-                                            
-                                          <select class="form-control" name="xalbum" style="width: 100%;" required>
+                                        <input type="hidden" name="xalbum" value="4" required/>
+                                           <select class="form-control" name="xalbum" style="width: 100%;" required>
                                                     <option value="">-Pilih-</option>
                                               <?php
                                               $no=0;
@@ -146,9 +147,9 @@
                                                         ?>
                                                     <option value="<?php echo $alb_id;?>"><?php echo $alb_nama;?></option>
                                               <?php endforeach;?>
-                                          </select>
+                                          </select> 
                                         </div>
-                                    </div>
+                                    </div> -->
                                     
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
