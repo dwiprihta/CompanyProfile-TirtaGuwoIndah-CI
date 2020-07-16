@@ -30,7 +30,7 @@
     <meta property="og:title" content="<?php echo $title;?>" />
     <meta property="og:description" content="<?php echo $deskripsi;?>" />
     <meta property="og:url" content="<?php echo $url?>" />
-    <meta property="og:site_name" content="mfikri.com" />
+    <meta property="og:site_name" content="#" />
 
     <meta property="article:section" content="<?php echo $author;?>" />
     <meta property="og:image" content="<?php echo $img?>" />

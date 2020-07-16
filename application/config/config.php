@@ -328,7 +328,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '$mfikri#2017)[]\%757qlchdklvjsc;alcvskv.s,/02-ru482wyr7';
+$config['encryption_key'] = '$roni#2017)[]\%757qlchdklvjsc;alcvskv.s,/02-ru482wyr7';
 
 /*
 |--------------------------------------------------------------------------
