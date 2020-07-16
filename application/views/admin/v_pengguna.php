@@ -194,7 +194,7 @@
                                         <div class="col-sm-7">
                                             <select class="form-control" name="xlevel" required>
                                                 <option value="1">Administrator</option>
-                                                <option value="2">Author</option>
+                                                <!-- <option value="2">Author</option> -->
                                             </select>
                                         </div>
                                     </div>
