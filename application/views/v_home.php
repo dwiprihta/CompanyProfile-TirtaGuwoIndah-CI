@@ -61,8 +61,7 @@
           <li><a href="#values">Blog</a></li>
           <li><a href="#portfolio">Galery</a></li>
           <li><a href="#faq">Faq</a></li>
-          <li><a class="btn btn-sm btn-top" href="#contact"> Contact</a></li>
-
+          <li><a href="#contact"> Contact</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
