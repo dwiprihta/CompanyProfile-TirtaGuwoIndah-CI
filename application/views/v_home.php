@@ -61,7 +61,8 @@
           <li><a href="#values">Blog</a></li>
           <li><a href="#portfolio">Galery</a></li>
           <li><a href="#faq">Faq</a></li>
-          <li><a class="btn btn-sm btn-top" href="#contact"> Contact</a></li>
+          <li><a href="#contact"> Contact</a></li>
+          <li><a class="btn btn-sm btn-warning" href="#contact" style="color:white;"> Pesan Tiket</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -167,6 +168,20 @@
 
       </div>
     </section><!-- End About Section -->
+
+    <div class="jumbotron jumbotron-fluid bg-warning">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h1 class="text-white"><b>PESAN TIKET SEKARANG</b></h1>
+            <p class="lead text-white">Tbeli tiketmu sekarang, jadilah member dan dapatkan diskon menarik setiap pembelian di kolam renang Tirto Guwo Indah</p>
+          </div>
+           <div class="col-lg-4" >
+           <a style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-danger" href="#contact" style="color:white;"> Pesan Tiket Sekarang</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="team section-bg">
