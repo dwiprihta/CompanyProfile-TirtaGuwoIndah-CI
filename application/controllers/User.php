@@ -14,8 +14,9 @@ class User extends CI_Controller{
     }
 
     public function login(){
-        $this->form_validation->set_rules('nip','NIP','required');
-        
+        $this->form_validation->set_rules('username','USERNAME','required');
+        $this->form->validation_set_ruls('password','PASSWORD','required');
+
     }
 }
 
