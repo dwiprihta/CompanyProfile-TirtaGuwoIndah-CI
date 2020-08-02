@@ -177,7 +177,7 @@
             <p class="lead text-white">Tbeli tiketmu sekarang, jadilah member dan dapatkan diskon menarik setiap pembelian di kolam renang Tirto Guwo Indah</p>
           </div>
            <div class="col-lg-4" >
-           <a style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-danger" href="#contact" style="color:white;"> Pesan Tiket Sekarang</a>
+           <a href="<?= base_url('user');?>" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-danger" href="#contact" style="color:white;"> Pesan Tiket Sekarang</a>
           </div>
         </div>
       </div>
