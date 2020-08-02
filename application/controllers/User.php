@@ -12,5 +12,10 @@ class User extends CI_Controller{
     public function index(){
         $this->load->view('v_login_user');
     }
+
+    public function login(){
+        $this->form_validation->set_rules('nip','NIP','required');
+        
+    }
 }
 
