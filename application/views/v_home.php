@@ -62,7 +62,7 @@
           <li><a href="#portfolio">Galery</a></li>
           <li><a href="#faq">Faq</a></li>
           <li><a href="#contact"> Contact</a></li>
-          <li><a class="btn btn-sm btn-warning" href="#contact" style="color:white;"> Pesan Tiket</a></li>
+          <li><a class="btn btn-sm btn-warning" href="<?= base_url('user');?>" style="color:white;"> Pesan Tiket</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->

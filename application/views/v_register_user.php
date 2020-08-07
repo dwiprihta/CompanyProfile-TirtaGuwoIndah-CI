@@ -27,22 +27,36 @@
   </div>
   <!-- /.login-logo -->
   <div style="border-radius:20px;" class="login-box-body">
-    <p class="login-box-msg"> <img style="width:150px;" src="<?php echo base_url('assets/img/A2.png')?>" alt="" class="img-fluid mb-3"></p><hr/>
+ 
+      <p class="login-box-msg"><H3><b>DAFTAR USER</b></H3></p><hr>
+ 
 
     <form action="<?php echo base_url().'administrator/auth'?>" method="post">
       <div class="form-group has-feedback">
-        <input type="email" name="email" class="form-control" placeholder="Email" required>
+        <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="email" name="email" class="form-control" placeholder="Email" required>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
         <input type="password" name="password" class="form-control" placeholder="Password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
+       <div class="form-group has-feedback">
+        <input type="password" name="password" class="form-control" placeholder="Ulangi Password" required>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+        <div class="form-group has-feedback">
+        <input type="pnumber" name="no_telp" class="form-control" placeholder="No Telfon" required>
+        <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+      </div>
       <div class="row">
         
         <!-- /.col -->
         <div class="col-lg-12 mb-5">
-          <button type="submit" class="btn btn-primary btn-block btn-flat mb-5">Login</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat mb-5">Daftar Sekarang</button>
         </div>
         <!-- /.col -->
       </div>
@@ -51,9 +65,7 @@
     
     <!-- /.social-auth-links -->
     <hr/>
-    <p><center>Belum Punya akun ?<a href="<?=base_url('user/register');?>"> Daftar Sekarang</a>
-</center></p>
-  </div>
+    <p><center>Kembali ke<a href="<?=base_url('user');?>"> Login</a>
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
