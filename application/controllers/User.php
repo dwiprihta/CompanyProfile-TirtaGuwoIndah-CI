@@ -1,85 +1,44 @@
 <?php
-defined ('BASEPATH') or exit ('no direct script access allowed');
-
 class User extends CI_Controller{
+    function __construct(){
+        parent:: __construct();
+        $this->load->model('m_login');
+    }
+    function index(){
+        $this->load->view('admin/v_login');
+    }
+    
+    function auth(){
+        $username=strip_tags(str_replace("'", "", $this->input->post('username',TRUE)));
+        $password=strip_tags(str_replace("'", "", $this->input->post('password',TRUE)));
+        $cadmin=$this->m_login->cekadmin($username,$password);
+        if($cadmin->num_rows() > 0){
+            $xcadmin=$cadmin->row_array();
+            $newdata = array(
+                'idadmin'   => $xcadmin['pengguna_id'],
+                'username'  => $xcadmin['pengguna_username'],
+                'nama'      => $xcadmin['pengguna_nama'],
+                'level'     => $xcadmin['pengguna_level'],
+                'logged_in' => TRUE
+            );
 
-    public function __construct(){
-        parent::__construct();
-            $this->load->library('form_validation');
-            $this->load->helper('url','form','html');
-        }
-
-    // public function index(){
-    //     $this->load->view('v_login_user');
-    // }
-
-    public function login(){
-        $this->form_validation->set_rules('username','USERNAME','required');
-        $this->form_validation->set_rules('password','PASSWORD','required');
-
-        if ($this->form_validation->run==FALSE){
-            redirect('v_login_user');
+            $this->session->set_userdata($newdata);
+            redirect('admin/dashboard'); 
         }else{
-            $this->_login();
+            redirect('administrator/gagallogin'); 
         }
     }
 
-    public function _login(){
-        $email=$this->input->post('email');
-        $pass=$this->input->post('password');
 
-        $user=$this->db->get_where('tbl_user',['email'=>$email])->row_array();
+    function gagallogin(){
+        $url=base_url('administrator');
+        echo $this->session->set_flashdata('msg','<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert"><span class="fa fa-close"></span></button> Username Atau Password Salah</div>');
+        redirect($url);
+    }
 
-        if($user){
-            if($user['id_role']=='1'){
-                if (password_verify($pass,$user['password'])){
-                    $data=[
-                        'id'=>$user['id'],
-                        'nama'=>$user['nama'],
-                        'email'=>$user['email'],
-                        'no_telpon'=>$user['no_telpon'],
-                    ];
-
-                    $this->session->set_userdata($data);
-
-                        if ($data['id_role']==1){
-
-                            redirect('user/login');
-
-                        }else{
-
-                            redirect('error');
-                        }
-
-                    }else{
-
-                    $this->session->set_flashdata('notif','<div style="border-radius:5px; color:#fff; background-color:#da3737;" class="alert alert-danger alert-dismissible fade show" role="alert"><i class="fa fa-exclamation-triangle"></i> Password salah !</div>');
-
-                    redirect('user/login');
-
-                    }
-            }else{
-                $this->session->set_flashdata('notif','<div style="border-radius:5px; color:#fff; background-color:#da3737;" class="alert alert-danger alert-dismissible fade show" role="alert"><strong></strong><i class="fa fa-exclamation-triangle"></i> Email belum diaktivasi !</div>');
-                redirect('user/login');	
-            }
-
-    }else{
-
-        $this->session->set_flashdata('notif','<div style="border-radius:5px; color:#fff; background-color:#da3737;" class="alert alert-danger alert-dismissible fade show" role="alert"><strong></strong><i class="fa fa-exclamation-triangle"></i> Username atau password anda salah !</div>');
-        redirect('user/login');	
-
+    function logout(){
+        $this->session->sess_destroy();
+        $url=base_url('administrator');
+        redirect($url);
     }
 }
-    
-    // REGISTER
-    public function register(){
-        $this->load->view('v_register_user');
-    }
-}
-            
-
-    
-    
-
-
-

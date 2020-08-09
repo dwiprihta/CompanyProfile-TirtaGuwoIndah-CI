@@ -62,7 +62,7 @@
           <li><a href="#portfolio">Galery</a></li>
           <li><a href="#faq">Faq</a></li>
           <li><a href="#contact"> Contact</a></li>
-          <li><a class="btn btn-sm btn-warning" href="<?= base_url('user');?>" style="color:white;"> Pesan Tiket</a></li>
+          <li><a class="btn btn-sm btn-warning" href="<?= base_url('user/login');?>" style="color:white;"> Pesan Tiket</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -177,7 +177,7 @@
             <p class="lead text-white">Tbeli tiketmu sekarang, jadilah member dan dapatkan diskon menarik setiap pembelian di kolam renang Tirto Guwo Indah</p>
           </div>
            <div class="col-lg-4" >
-           <a href="<?= base_url('user');?>" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-danger" href="#contact" style="color:white;"> Pesan Tiket Sekarang</a>
+           <a href="<?= base_url('user/login');?>" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-danger" href="#contact" style="color:white;"> Pesan Tiket Sekarang</a>
           </div>
         </div>
       </div>

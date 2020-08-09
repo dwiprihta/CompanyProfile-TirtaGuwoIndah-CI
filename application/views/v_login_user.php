@@ -23,31 +23,34 @@
 <body class="bg-login">
 <div class="login-box">
   <div>
-   <p><?php echo $this->session->flashdata('msg');?></p>
+   <p><?php echo $this->session->flashdata('notif');?></p>
   </div>
   <!-- /.login-logo -->
   <div style="border-radius:20px;" class="login-box-body">
     <p class="login-box-msg"> <img style="width:150px;" src="<?php echo base_url('assets/img/A2.png')?>" alt="" class="img-fluid mb-3"></p><hr/>
 
-    <form action="<?php echo base_url().'administrator/auth'?>" method="post">
-      <div class="form-group has-feedback">
+    <form action="<?php echo base_url('user/login')?>" method="post" novalidate>
+    <?=$this->session->flashdata('notif')?>
+      <div class="form-group">
         <input type="email" name="email" class="form-control" placeholder="Email" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
+         <?php echo form_error('email','<div class="text-danger">','</div>'); ?>
       </div>
-      <div class="form-group has-feedback">
-        <input type="password" name="password" class="form-control" placeholder="Password" required>
+      <div class="form-group">
+        <input type="password" name="pass" class="form-control" placeholder="Password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
+      <?php echo form_error('pass','<div class="text-danger">','</div>'); ?>
       <div class="row">
         
         <!-- /.col -->
         <div class="col-lg-12 mb-5">
-          <button type="submit" class="btn btn-primary btn-block btn-flat mb-5">Login</button>
+         <input id="" type="submit" value="Login" class="btn btn-md btn-primary btn-block">
         </div>
         <!-- /.col -->
       </div>
     </form>
-
+   <div id='ResponseInput'></div>
     
     <!-- /.social-auth-links -->
     <hr/>

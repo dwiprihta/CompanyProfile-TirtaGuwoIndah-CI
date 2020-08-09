@@ -31,7 +31,7 @@
       <p class="login-box-msg"><H3><b>DAFTAR USER</b></H3></p><hr>
  
 
-    <form action="<?php echo base_url().'administrator/auth'?>" method="post">
+    <form action="<?php echo base_url().'administrator/auth'?>" method="post" >
       <div class="form-group has-feedback">
         <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
