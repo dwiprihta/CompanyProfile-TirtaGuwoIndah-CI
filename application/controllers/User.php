@@ -9,8 +9,8 @@ class User extends CI_Controller{
     }
     
     function auth(){
-        $username=strip_tags(str_replace("'", "", $this->input->post('username',TRUE)));
-        $password=strip_tags(str_replace("'", "", $this->input->post('password',TRUE)));
+        $username=strip_tags(str_replace("'", "", $this->input->post('email',TRUE)));
+        $password=strip_tags(str_replace("'", "", $this->input->post('pass',TRUE)));
         $cadmin=$this->m_login->cekadmin($username,$password);
         if($cadmin->num_rows() > 0){
             $xcadmin=$cadmin->row_array();

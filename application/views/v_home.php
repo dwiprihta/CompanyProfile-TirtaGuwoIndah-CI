@@ -62,7 +62,7 @@
           <li><a href="#portfolio">Galery</a></li>
           <li><a href="#faq">Faq</a></li>
           <li><a href="#contact"> Contact</a></li>
-          <li><a class="btn btn-sm btn-warning" href="<?= base_url('user/login');?>" style="color:white;"> Pesan Tiket</a></li>
+          <li><a data-toggle="modal" data-target="modaltambah" class="btn btn-sm btn-warning" href="#" style="color:white;"> Pesan Tiket</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -483,6 +483,176 @@
       </div>
       <?php endforeach;?>
     <!-- INI MODAL ARTIKERL -->
+
+    <!--MODAL TIKETING-->
+        <div class="modal fade" id="modaltambah" tabindex="-1" role="dialog" aria-labelledby="modalTambah" aria-hidden="true">
+
+          <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+              <div class="modal-header">
+
+                <h5 class="modal-title" id="exampleModalLabel"><I class="fa fa-user"></i> Tambah Pegawai</h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class='fa fa-times-circle'></i></button>
+
+              </div>
+
+              <div class="modal-body">
+
+
+
+              <form action="<?php echo base_url('pegawai/add_pegawai');?>" method="POST">      
+
+                         <div class="form-group">
+
+                         <label for="inputAddress">NIP (Nomor Induk Pegawai)</label>
+
+                         <input type="text" class="form-control" required="" name="npm" id="inputAddress" placeholder="NIP">
+
+                         <small class="form-text form-danger"><?= form_error('npm');?></small>
+
+                         </div>
+
+
+
+                         <div class="form-group">
+
+                         <label for="inputAddress">Nama</label>
+
+                         <input type="text" class="form-control"  required="" name="nama" id="inputAddress" placeholder="Nama pegawai">  
+
+                         </div>
+
+
+
+                         <div class="form-group"  required="">
+
+                         <label>Jenis Kelamin</label><br>
+
+                         <div class="custom-control custom-radio custom-control-inline">
+
+                         <input type="radio" id="customRadioInline1" name="jk" value="laki-laki" class="custom-control-input">
+
+                         <label class="custom-control-label" for="customRadioInline1">LAKI-LAKI</label>
+
+                         </div>
+
+
+
+                         <div class="custom-control custom-radio custom-control-inline">
+
+                         <input type="radio" id="customRadioInline2" name="jk" value="perempuan" class="custom-control-input">
+
+                         <label class="custom-control-label" for="customRadioInline2">PEREMPUAN</label>
+
+                         </div> 
+
+                         <small class="form-text text-danger"><?= form_error('jk');?></small>
+
+                         </div> 
+
+
+
+                         <div class="form-row">
+
+                         <div class="form-group col-md-6">
+
+                         <label for="inputEmail4">Tempat Lahir</label>
+
+                         <input type="text" class="form-control"  required="" name="tmp_lahir" id="inputEmail4" placeholder="Tempat Lahir">
+
+                         </div>
+
+
+
+                         <div class="form-group col-md-6">
+
+                         <label for="inputPassword4">Tanggal Lahir</label>
+
+                         <input type="date" class="form-control"  required="" name="tgl_lahir" id="inputPassword4" placeholder="">
+
+                         </div>
+
+                         </div>
+
+
+
+                         <div class="form-group">
+
+                         <label for="exampleFormControlSelect1">Instansi</label>
+
+                         <select class="form-control" name="instansi" required="">
+
+                              <?php foreach($instansi as $jr):?>
+
+                                   <option value="<?= $jr['instansi'];?>"><?= ucfirst($jr['instansi']);?></option>
+
+                              <?php endforeach;?>      
+
+                         </select>
+
+                         </div>
+
+
+
+                         <div class="form-group">
+
+                         <label for="exampleFormControlSelect1">Jabatan</label>
+
+                         <select class="form-control" name="jabatan" required="" id="exampleFormControlSelect1">
+
+                              <?php foreach($jabatan as $jr):?>
+
+                                   <option value="<?= $jr['jabatan'];?>"><?= $jr['jabatan'];?></option>
+
+                              <?php endforeach;?>      
+
+                         </select>
+                         </div>
+
+
+                         <div class="form-group">
+                         <label for="exampleFormControlSelect1">Pangkat</label>
+                         <select class="form-control" name="pangkat" required="" id="pangkat">
+
+                              <?php foreach($pangkat as $jr):?>
+
+                                   <option value="<?= $jr['pangkat'];?>"><?= $jr['pangkat'];?></option>
+
+                              <?php endforeach;?>      
+
+                         </select>
+                         </div>
+
+                         <div class="form-group">
+                         <label for="exampleFormControlSelect1">Golongan</label>
+                         <select class="form-control" name="golongan" required="" id="exampleFormControlSelect1"> 
+                            <?php foreach($golongan as $jr):?>
+                                   <option value="<?= (ucfirst($jr['golongan']));?>"><?= (ucfirst($jr['golongan']));?></option>
+                              <?php endforeach;?>         
+                         </select>
+                         </div>
+
+                         <input type="hidden" class="form-control"  required="" name="status" value="aktif">
+
+                         <div class="modal-footer">
+                            <button type="submit" name="input" class="btn btn-primary"><i class= 'fa fa-save'></i> Simpan Data</button>  
+                            <button type="RESET" class="btn btn-danger">Reset</button>
+                         </form>
+
+                         </div>
+
+                         </div>
+
+              </div>
+
+            </div>
+
+        </div>
+
+       <!--MODAL TIKETING-->
 
     <div class="container d-lg-flex py-4">
       <div class="mr-lg-auto text-center text-lg-left">
