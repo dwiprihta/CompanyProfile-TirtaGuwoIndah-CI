@@ -90,7 +90,7 @@
             <div class="content">
               <h3>Kenapa Tirta Guwo Indah ?</h3>
               <p>
-                Tirto Guwo Indah merupakan salah satu taman hiburan air terbesar dan terlengkap di Karanganyar, jawa Tengah. Ditunjang dengan fasilitas lengkap dan memadai, menjadikan Tirto guwo indah sebagai tempat rekreasi yang nyaman, asyik dan family friendly !
+                Tirta Guwo Indah merupakan salah satu taman hiburan air terbesar dan terlengkap di Karanganyar, jawa Tengah. Ditunjang dengan fasilitas lengkap dan memadai, menjadikan Tirto guwo indah sebagai tempat rekreasi yang nyaman, asyik dan family friendly !
               </p>
               <div class="text-center">
                 <a href="#services" class="more-btn">Fasilitas<i class="bx bx-chevron-right"></i></a>
