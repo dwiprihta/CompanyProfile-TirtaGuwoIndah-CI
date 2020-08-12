@@ -484,32 +484,6 @@
       <?php endforeach;?>
     <!-- INI MODAL ARTIKERL -->
 
-    <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-      </button>
-
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
     <!--MODAL TIKETING-->
         <div class="modal fade" id="modaltambah" tabindex="-1" role="dialog" aria-labelledby="modalTambah" aria-hidden="true">
 
@@ -519,13 +493,13 @@
 
               <div class="modal-header">
 
-                <h5 class="modal-title" id="exampleModalLabel"><I class="fa fa-user"></i> Tambah Pegawai</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><I class="fa fa-user"></i> BELI TIKETMU</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class='fa fa-times-circle'></i></button>
 
               </div>
 
-              <div class="modal-body">
+              <div class="modal-body p-4">
 
 
 
@@ -533,9 +507,9 @@
 
                          <div class="form-group">
 
-                         <label for="inputAddress">NIP (Nomor Induk Pegawai)</label>
+                         <label for="inputAddress">NO KTP (Nomor Induk Kependudukan)</label>
 
-                         <input type="text" class="form-control" required="" name="npm" id="inputAddress" placeholder="NIP">
+                         <input type="text" class="form-control" required="" name="no_ktp" id="inputAddress" placeholder="NIK">
 
                          <small class="form-text form-danger"><?= form_error('npm');?></small>
 
@@ -545,9 +519,9 @@
 
                          <div class="form-group">
 
-                         <label for="inputAddress">Nama</label>
+                         <label for="nama">Nama</label>
 
-                         <input type="text" class="form-control"  required="" name="nama" id="inputAddress" placeholder="Nama pegawai">  
+                         <input type="text" class="form-control"  required="" name="nama" id="nama" placeholder="Nama">  
 
                          </div>
 
@@ -581,90 +555,57 @@
 
 
 
-                         <div class="form-row">
-
-                         <div class="form-group col-md-6">
-
-                         <label for="inputEmail4">Tempat Lahir</label>
-
-                         <input type="text" class="form-control"  required="" name="tmp_lahir" id="inputEmail4" placeholder="Tempat Lahir">
-
-                         </div>
-
-
-
-                         <div class="form-group col-md-6">
-
-                         <label for="inputPassword4">Tanggal Lahir</label>
-
-                         <input type="date" class="form-control"  required="" name="tgl_lahir" id="inputPassword4" placeholder="">
-
-                         </div>
-
-                         </div>
-
-
-
                          <div class="form-group">
 
-                         <label for="exampleFormControlSelect1">Instansi</label>
+                         <label for="email">email</label>
 
-                         <select class="form-control" name="instansi" required="">
-
-                              <?php foreach($instansi as $jr):?>
-
-                                   <option value="<?= $jr['instansi'];?>"><?= ucfirst($jr['instansi']);?></option>
-
-                              <?php endforeach;?>      
-
-                         </select>
+                         <input type="email" class="form-control"  required="" name="email" id="email" placeholder="Email">
 
                          </div>
 
 
 
-                         <div class="form-group">
+                       <div class="form-group">
 
-                         <label for="exampleFormControlSelect1">Jabatan</label>
+                         <label for="alamat">Alamat</label>
 
-                         <select class="form-control" name="jabatan" required="" id="exampleFormControlSelect1">
+                         <input type="text" class="form-control"  required="" name="alamat" id="alamat" placeholder="Alamat">
 
-                              <?php foreach($jabatan as $jr):?>
-
-                                   <option value="<?= $jr['jabatan'];?>"><?= $jr['jabatan'];?></option>
-
-                              <?php endforeach;?>      
-
-                         </select>
                          </div>
 
 
-                         <div class="form-group">
-                         <label for="exampleFormControlSelect1">Pangkat</label>
-                         <select class="form-control" name="pangkat" required="" id="pangkat">
+                      <div class="form-group">
 
-                              <?php foreach($pangkat as $jr):?>
+                         <label for="no_telpon">No Telpon</label>
 
-                                   <option value="<?= $jr['pangkat'];?>"><?= $jr['pangkat'];?></option>
+                         <input type="text" class="form-control"  required="" name="no_telpon" id="no_telpon" placeholder="No Telpon">
 
-                              <?php endforeach;?>      
-
-                         </select>
                          </div>
 
-                         <div class="form-group">
-                         <label for="exampleFormControlSelect1">Golongan</label>
-                         <select class="form-control" name="golongan" required="" id="exampleFormControlSelect1"> 
-                            <?php foreach($golongan as $jr):?>
-                                   <option value="<?= (ucfirst($jr['golongan']));?>"><?= (ucfirst($jr['golongan']));?></option>
-                              <?php endforeach;?>         
-                         </select>
+
+                        <div class="form-group">
+
+                         <label for="tgl_kunjungan">Tanggal Kunjungan</label>
+
+                         <input type="date" class="form-control"  required="" name="tgl_kunjungan" id="tgl_kunjungan" placeholder="">
+
+                         </div>
+
+
+                        <div class="form-group">
+
+                         <label for="jam_kunjungan">Jam Kunjungan</label>
+
+                         <input type="time" class="form-control"  required="" name="jam_kunjungan" id="jam_kunjungan" placeholder="">
+
+                         </div>
+
                          </div>
 
                          <input type="hidden" class="form-control"  required="" name="status" value="aktif">
 
                          <div class="modal-footer">
-                            <button type="submit" name="input" class="btn btn-primary"><i class= 'fa fa-save'></i> Simpan Data</button>  
+                            <button type="submit" name="input" class="btn btn-warning text-white"><i class= 'fa fa-save'></i> Simpan Data</button>  
                             <button type="RESET" class="btn btn-danger">Reset</button>
                          </form>
 
