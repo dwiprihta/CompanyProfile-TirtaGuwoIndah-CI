@@ -174,10 +174,13 @@
         <div class="row">
           <div class="col-lg-8">
             <h1 class="text-white"><b>PESAN TIKET SEKARANG</b></h1>
-            <p class="lead text-white">Tbeli tiketmu sekarang, jadilah member dan dapatkan diskon menarik setiap pembelian di kolam renang Tirto Guwo Indah</p>
+            <p class="lead text-white">Beli tiketmu sekarang, jadilah member dan dapatkan diskon menarik setiap pembelian di kolam renang Tirto Guwo Indah</p>
           </div>
-           <div class="col-lg-4" >
-           <a href="<?= base_url('user/login');?>" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-danger" href="#contact" style="color:white;"> Pesan Tiket Sekarang</a>
+           <div class="col-lg-2" >
+           <a data-toggle="modal" data-target="#modaltambah" href="" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-danger" href="#contact" style="color:white;"> Pesan Tiket</a>
+          </div>
+           <div class="col-lg-2" >
+           <a href="<?= base_url('user/login');?>" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-primary" href="#contact" style="color:white;"> CEK Tiketmu</a>
           </div>
         </div>
       </div>
