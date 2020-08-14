@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  
   <!-- Favicons -->
   <link href="<?php echo base_url('assets/img/a2.png');?>" rel="icon">
   <link href="<?php echo base_url('assets/img/a2.png');?>" rel="apple-touch-icon">
@@ -130,6 +129,8 @@
       </div>
     </section><!-- End Why Us Section -->
 
+     <?=$this->session->flashdata('notif');?>
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg">
       <div class="container">
@@ -180,7 +181,7 @@
            <a data-toggle="modal" data-target="#modaltambah" href="" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-danger" href="#contact" style="color:white;"> Pesan Tiket</a>
           </div>
            <div class="col-lg-2" >
-           <a href="<?= base_url('user/login');?>" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-primary" href="#contact" style="color:white;"> CEK Tiketmu</a>
+           <a href="<?= base_url('tiket');?>" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-primary" href="#contact" style="color:white;"> CEK Tiketmu</a>
           </div>
         </div>
       </div>
@@ -451,6 +452,79 @@
       </div>
     </div>
 
+     <!--MODAL ADD TIKETING-->
+        <div class="modal fade" id="modaltambah" tabindex="-1" role="dialog" aria-labelledby="modalTambah" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><I class="fa fa-user"></i> BELI TIKETMU</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class='fa fa-times-circle'></i></button>
+              </div>
+              <div class="modal-body p-4">
+              <form action="<?php echo base_url('tiket/add');?>" method="POST">  
+
+                  <div class="form-group">
+                    <NO for="no_ktp">NO KTP (Nomor Induk Kependudukan)</label>
+                    <input type="text" class="form-control" required="" name="no_ktp" id="no_ktp" placeholder="NIK">
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+                  </div>
+
+                  <div class="form-group">
+                   <label for="nama">Nama</label>
+                    <input type="text" class="form-control"  required="" name="nama" id="nama" placeholder="Nama">  
+                  </div>
+
+                  <div class="form-group"  required="">
+                    <label>Jenis Kelamin</label><br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline1" name="jk" value="laki-laki" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline1">LAKI-LAKI</label>
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name="jk" value="perempuan" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline2">PEREMPUAN</label>
+                  </div> 
+                    <small class="form-text text-danger"><?= form_error('jk');?></small>
+                  </div> 
+
+                  <div class="form-group">
+                    <label for="email">email</label>
+                    <input type="email" class="form-control"  required="" name="email" id="email" placeholder="Email">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <input type="text" class="form-control"  required="" name="alamat" id="alamat" placeholder="Alamat">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="no_telpon">No Telpon</label>
+                    <input type="text" class="form-control"  required="" name="no_telpon" id="no_telpon" placeholder="No Telpon">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tgl_kunjungan">Tanggal Kunjungan</label>
+                    <input type="date" class="form-control"  required="" name="tgl_kunjungan" id="tgl_kunjungan" placeholder="">
+                    </div>
+
+                  <div class="form-group">
+                    <label for="jam_kunjungan">Jam Kunjungan</label>
+                    <input type="time" class="form-control"  required="" name="jam_kunjungan" id="jam_kunjungan" placeholder="">
+                  </div>
+                </div>
+
+                  <div class="modal-footer">
+                    <button type="submit" name="input" class="btn btn-warning text-white"><i class= 'fa fa-save'></i> Simpan Data</button>  
+                    <button type="RESET" class="btn btn-danger">Reset</button>
+                  </form>
+                  </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+       <!--MODAL ADD TIKETING-->
+
     <!-- INI MODAL ARTIKERL -->
       <?php
                 foreach ($post->result_array() as $j) :
@@ -487,142 +561,7 @@
       <?php endforeach;?>
     <!-- INI MODAL ARTIKERL -->
 
-    <!--MODAL TIKETING-->
-        <div class="modal fade" id="modaltambah" tabindex="-1" role="dialog" aria-labelledby="modalTambah" aria-hidden="true">
-
-          <div class="modal-dialog" role="document">
-
-            <div class="modal-content">
-
-              <div class="modal-header">
-
-                <h5 class="modal-title" id="exampleModalLabel"><I class="fa fa-user"></i> BELI TIKETMU</h5>
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class='fa fa-times-circle'></i></button>
-
-              </div>
-
-              <div class="modal-body p-4">
-
-
-
-              <form action="<?php echo base_url('pegawai/add_pegawai');?>" method="POST">      
-
-                         <div class="form-group">
-
-                         <label for="inputAddress">NO KTP (Nomor Induk Kependudukan)</label>
-
-                         <input type="text" class="form-control" required="" name="no_ktp" id="inputAddress" placeholder="NIK">
-
-                         <small class="form-text form-danger"><?= form_error('npm');?></small>
-
-                         </div>
-
-
-
-                         <div class="form-group">
-
-                         <label for="nama">Nama</label>
-
-                         <input type="text" class="form-control"  required="" name="nama" id="nama" placeholder="Nama">  
-
-                         </div>
-
-
-
-                         <div class="form-group"  required="">
-
-                         <label>Jenis Kelamin</label><br>
-
-                         <div class="custom-control custom-radio custom-control-inline">
-
-                         <input type="radio" id="customRadioInline1" name="jk" value="laki-laki" class="custom-control-input">
-
-                         <label class="custom-control-label" for="customRadioInline1">LAKI-LAKI</label>
-
-                         </div>
-
-
-
-                         <div class="custom-control custom-radio custom-control-inline">
-
-                         <input type="radio" id="customRadioInline2" name="jk" value="perempuan" class="custom-control-input">
-
-                         <label class="custom-control-label" for="customRadioInline2">PEREMPUAN</label>
-
-                         </div> 
-
-                         <small class="form-text text-danger"><?= form_error('jk');?></small>
-
-                         </div> 
-
-
-
-                         <div class="form-group">
-
-                         <label for="email">email</label>
-
-                         <input type="email" class="form-control"  required="" name="email" id="email" placeholder="Email">
-
-                         </div>
-
-
-
-                       <div class="form-group">
-
-                         <label for="alamat">Alamat</label>
-
-                         <input type="text" class="form-control"  required="" name="alamat" id="alamat" placeholder="Alamat">
-
-                         </div>
-
-
-                      <div class="form-group">
-
-                         <label for="no_telpon">No Telpon</label>
-
-                         <input type="text" class="form-control"  required="" name="no_telpon" id="no_telpon" placeholder="No Telpon">
-
-                         </div>
-
-
-                        <div class="form-group">
-
-                         <label for="tgl_kunjungan">Tanggal Kunjungan</label>
-
-                         <input type="date" class="form-control"  required="" name="tgl_kunjungan" id="tgl_kunjungan" placeholder="">
-
-                         </div>
-
-
-                        <div class="form-group">
-
-                         <label for="jam_kunjungan">Jam Kunjungan</label>
-
-                         <input type="time" class="form-control"  required="" name="jam_kunjungan" id="jam_kunjungan" placeholder="">
-
-                         </div>
-
-                         </div>
-
-                         <input type="hidden" class="form-control"  required="" name="status" value="aktif">
-
-                         <div class="modal-footer">
-                            <button type="submit" name="input" class="btn btn-warning text-white"><i class= 'fa fa-save'></i> Simpan Data</button>  
-                            <button type="RESET" class="btn btn-danger">Reset</button>
-                         </form>
-
-                         </div>
-
-                         </div>
-
-              </div>
-
-            </div>
-
-        </div>
-
-       <!--MODAL TIKETING-->
+   
 
     <div class="container d-lg-flex py-4">
       <div class="mr-lg-auto text-center text-lg-left">
@@ -660,6 +599,43 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('assets/js/main.js')?>"></script>
+  <!-- AJAX Input -->
+  <script>
+    $(document).ready(function(){
+        //Simpan Barang
+        $('#btn_simpan').on('click',function(){
+            var kobar=$('#kode_barang').val();
+            var nabar=$('#nama_barang').val();
+            var harga=$('#harga').val();
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo base_url('index.php/barang/simpan_barang')?>",
+                dataType : "JSON",
+                data : {kobar:kobar , nabar:nabar, harga:harga},
+                success: function(data){
+                    $('[name="kobar"]').val("");
+                    $('[name="nabar"]').val("");
+                    $('[name="harga"]').val("");
+                    $('#ModalaAdd').modal('hide');
+                    tampil_data_barang();
+                }
+            });
+            return false;
+        });
+
+        /////////////
+
+        $('#btn-add').on('click',function(){
+          var no_ktp=$('#no_ktp').val();
+          var nama=$('#nama').val();
+          var jk=$('#jk').val();
+
+        })
+      
+ 
+    });
+ 
+  </script>
 
 </body>
 </html>
