@@ -461,8 +461,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class='fa fa-times-circle'></i></button>
               </div>
               <div class="modal-body p-4">
-              <form action="<?php echo base_url('tiket/add');?>" method="POST">  
-
+              <form action="<?= base_url('tiket/add');?>" method ="POST">
                   <div class="form-group">
                     <NO for="no_ktp">NO KTP (Nomor Induk Kependudukan)</label>
                     <input type="text" class="form-control" required="" name="no_ktp" id="no_ktp" placeholder="NIK">
@@ -477,13 +476,13 @@
                   <div class="form-group"  required="">
                     <label>Jenis Kelamin</label><br>
                     <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline1" name="jk" value="laki-laki" class="custom-control-input">
-                    <label class="custom-control-label" for="customRadioInline1">LAKI-LAKI</label>
+                    <input type="radio" id="jenis_kemain1" name="jk" value="laki-laki" class="custom-control-input">
+                    <label class="custom-control-label" for="jenis_kemain1">LAKI-LAKI</label>
                   </div>
 
                   <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline2" name="jk" value="perempuan" class="custom-control-input">
-                    <label class="custom-control-label" for="customRadioInline2">PEREMPUAN</label>
+                    <input type="radio" id="jenis_kemain2" name="jk" value="perempuan" class="custom-control-input">
+                    <label class="custom-control-label" for="jenis_kemain2">PEREMPUAN</label>
                   </div> 
                     <small class="form-text text-danger"><?= form_error('jk');?></small>
                   </div> 
@@ -515,7 +514,7 @@
                 </div>
 
                   <div class="modal-footer">
-                    <button type="submit" name="input" class="btn btn-warning text-white"><i class= 'fa fa-save'></i> Simpan Data</button>  
+                    <button type="submit" name="input" id="btn-add" class="btn btn-warning text-white"><i class= 'fa fa-save'></i> Simpan Data</button>  
                     <button type="RESET" class="btn btn-danger">Reset</button>
                   </form>
                   </div>
@@ -527,15 +526,15 @@
 
     <!-- INI MODAL ARTIKERL -->
       <?php
-                foreach ($post->result_array() as $j) :
-                $post_id=$j['tulisan_id'];
-                $post_judul=$j['tulisan_judul'];
-                $post_isi=$j['tulisan_isi'];
-                $post_author=$j['tulisan_author'];
-                $post_image=$j['tulisan_gambar'];
-                $post_tglpost=$j['tanggal'];
-                $post_slug=$j['tulisan_slug'];
-              ?>
+            foreach ($post->result_array() as $j) :
+            $post_id=$j['tulisan_id'];
+            $post_judul=$j['tulisan_judul'];
+            $post_isi=$j['tulisan_isi'];
+            $post_author=$j['tulisan_author'];
+            $post_image=$j['tulisan_gambar'];
+            $post_tglpost=$j['tanggal'];
+            $post_slug=$j['tulisan_slug'];
+          ?>
       <div class="modal fade bd-example-modal-lg<?=$post_id;?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
@@ -599,40 +598,42 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('assets/js/main.js')?>"></script>
+
   <!-- AJAX Input -->
   <script>
     $(document).ready(function(){
-        //Simpan Barang
-        $('#btn_simpan').on('click',function(){
-            var kobar=$('#kode_barang').val();
-            var nabar=$('#nama_barang').val();
-            var harga=$('#harga').val();
-            $.ajax({
-                type : "POST",
-                url  : "<?php echo base_url('index.php/barang/simpan_barang')?>",
-                dataType : "JSON",
-                data : {kobar:kobar , nabar:nabar, harga:harga},
-                success: function(data){
-                    $('[name="kobar"]').val("");
-                    $('[name="nabar"]').val("");
-                    $('[name="harga"]').val("");
-                    $('#ModalaAdd').modal('hide');
-                    tampil_data_barang();
-                }
-            });
-            return false;
-        });
-
-        /////////////
-
+      
+        //SIMPAN BARANG
         $('#btn-add').on('click',function(){
           var no_ktp=$('#no_ktp').val();
           var nama=$('#nama').val();
-          var jk=$('#jk').val();
+          var jenis_kelamin1=$('#jenis_kelamin1').val();
+          var jenis_kelamin2=$('#jenis_kelamin2').val();
+          var email=$('#email').val();
+          var no_telpon=$('#no_telpon').val();
+          var alamat=$('#alamat').val();
+          var tgl_kunjungan=$('tgl_kunjungan').val();
+          var jam_kunjungan=$('#jam_kunjungan').val();
+          $.ajax({
+            type="POST",
+            url:"<?= base_url('tiket/add')?>",
+            dataType:"JSON",
+            data : {no_ktp:no_ktp, nama:nama, jenis_kelamin1:jenis_kelaimin1, 
+            jenis_kelamin2:jenis_kelaimin2, email:email, no_telpon:no-telpon,alamat:alamat, tgl_kunjungan:tgl_kunjungan, jam_kunjungan:jam_kunjungan },
 
-        })
-      
- 
+            success:function(convert){
+            $('[name="no_ktp"]').val("");
+            $('[name="nama"]').val("");
+            $('[name="jk]').val("");
+            $('[name="email"]').val("");
+            $('[name="no_telpon"]').val("");
+            $('[name="alamat"]').val("");
+            $('[name="tgl_kunjjungan"]').val("");
+            $('[name="jam_kunjungan"]').val("");
+            $('#modaltambah').modal('hide');
+            }
+          })   
+        });
     });
  
   </script>

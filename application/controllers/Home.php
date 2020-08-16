@@ -8,6 +8,7 @@ class Home extends CI_Controller{
 		$this->load->model('m_galeri');
         $this->m_pengunjung->count_visitor();
 	}
+
 	function index(){
 		$x['post']=$this->m_tulisan->get_post_home();
 		$x['fasilitas']=$this->m_portfolio->get_portofolio_home();

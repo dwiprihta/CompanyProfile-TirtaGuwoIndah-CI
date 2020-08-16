@@ -6,8 +6,11 @@ class Tiket extends CI_Controller{
 		$this->load->model('M_tiket');
 	}
 
-	public function add(){
+	public function index(){
+		$this->load->view('v_tiket');
+	}
 
+	public function add(){
 		//validasi form yang masuk
 		$this->form_validation->set_rules('no_ktp', 'NOMOR KTP','required');
 		$this->form_validation->set_rules('nama','NAMA','required');
@@ -26,18 +29,18 @@ class Tiket extends CI_Controller{
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>');
-			redirect ('home');
+			redirect ('tiket');
 		}else{
 			$convert=$this->M_tiket->add();
 			echo json_encode($convert);
 			$this->session->set_flashdata('notif',
 			'<div class="alert alert-primary alert-dismissible fade show" role="alert">
-				<strong>Terjadi Kesalahan!</strong> Terjadi kesalahan pada data yang anda inputkan.
+				<strong>SUCCESS!</strong> Data yanda berhasil diinput
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>');
-			redirect ('home');
+			redirect ('tiket');
 		}
 	}
 }

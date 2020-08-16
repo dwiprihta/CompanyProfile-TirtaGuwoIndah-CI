@@ -79,6 +79,12 @@
       </div>
       </div>
   </section><!-- End Hero -->
+  
+ <div class="data-ticket">
+  <div class="container mb-5">
+   <?=$this->session->flashdata('notif');?>
+  </div>
+ </div>
 
  <section class="data-ticket">
   <div class="container mb-5">
