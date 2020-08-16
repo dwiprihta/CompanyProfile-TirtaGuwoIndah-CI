@@ -68,18 +68,18 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center mb-5">
     <div class="container" data-aos="fade-in">
       <h1>DATA PEMESANAN TIKET</h1>
-	  <h2>Cari Data tiketmu (dengan mengetik no KTP, email, atau No Telfon)</h2>
-	  	<div class="row">
-			<div class="col-lg-10">
-			<input class="form-control form-control-lg" type="text" placeholder="Cari Tiketmu">
-			</div>
-			<div class="col-lg-2">
-			<button type="button" class="btn btn-lg btn-primary">Cari Data</button>
-			</div>
-      </div>
-      </div>
+    <h2>Cari Data tiketmu (dengan mengetik no KTP, email, atau No Telfon)</h2>
+     <form class="form-inline" action="<?php echo base_url('tiket/search');?>" target="blank" method="POST"> 
+            <div class="form-group">
+              <input type="text" style="width:410px" required="" class="form-control" name="tiket" id="inputAddress" placeholder="Ketik keyword"> 
+            </div>
+            <div class="form-group">
+              <button class="btn btn-danger my-2 my-sm-0 ml-2" type="submit" name="cari">Cari</button>
+            </div>
+      </form>
+    </div>
   </section><!-- End Hero -->
-  
+
  <div class="data-ticket">
   <div class="container mb-5">
    <?=$this->session->flashdata('notif');?>
@@ -89,22 +89,31 @@
  <section class="data-ticket">
   <div class="container mb-5">
     <div class="row">
-      <div class="col-lg-6">
-        <div class="card mb-" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-            <img src="..." class="card-img" alt="...">
+
+    <?php foreach($tikets as $tiket ):?>
+        <div class="col-lg-6 mt-4">
+          <div class="card mb-" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+              <img src="<?= base_url('assets/img/ticket.jpg');?>" class="card-img mt-3" alt="...">
+              </div>
+              <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><?= $tiket['id_tiket'];?></h5>
+                <p class="card-text"><?= $tiket['nama'];?> (<?= $tiket['email'];?>)</p>
+                 <p class="card-text"><?= $tiket['tgl'];?> (<?= $tiket['jam'];?>)</p>
+               <button type="button" class="btn btn-sm btn-primary">
+                Masih berlaku <span class="badge badge-light"><?= $tiket['jumlah'];?> </span>
+              </button>
+                <hr>
+              <a href="#" class="btn btn-sm btn-success">Konfirmasi</a>
+              <a href="#" class="btn btn-sm btn-info">Detail</a>
+              </div>
+              </div>
             </div>
-            <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
-            </div>
-          </div>
-          </div>
-      </div>
+        </div>
+    <?php endforeach;?>
       </div>
   </div>
 </section>

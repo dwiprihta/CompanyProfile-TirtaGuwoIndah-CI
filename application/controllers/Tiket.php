@@ -20,6 +20,7 @@ class Tiket extends CI_Controller{
 		$this->form_validation->set_rules('no_telpon','NO TELPON','required');
 		$this->form_validation->set_rules('tgl_kunjungan','TANGGAL KUNJUNGAN','required');
 		$this->form_validation->set_rules('jam_kunjungan','JAM KUNJUNGAN','required');
+		$this->form_validation->set_rules('jumlah','JUMLAH TIKET','required');
 
 		if ($this->form_validation->run()==FALSE){
 			$this->session->set_flashdata('notif',
@@ -43,4 +44,10 @@ class Tiket extends CI_Controller{
 			redirect ('tiket');
 		}
 	}
+
+	public function search(){
+			$keyword = $this->input->post('tiket');
+			$data['tikets']=$this->M_tiket->get_tiket_search($keyword);
+			$this->load->view('v_tiket',$data);
+		}
 }

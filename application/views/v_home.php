@@ -129,7 +129,7 @@
       </div>
     </section><!-- End Why Us Section -->
 
-     <?=$this->session->flashdata('notif');?>
+    
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg">
@@ -511,11 +511,20 @@
                     <label for="jam_kunjungan">Jam Kunjungan</label>
                     <input type="time" class="form-control"  required="" name="jam_kunjungan" id="jam_kunjungan" placeholder="">
                   </div>
+
+                   <div class="form-group">
+                    <label for="jumlah">Jumlah Tiket</label>
+                    <input type="number" min="1" class="form-control"  required="" name="jumlah" id="jumlah" placeholder="" onkeyup="sum();" onchange="sum();">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tottal">Total bayar</label>
+                    <input readonly="" type="number" min="1" class="form-control"  required="" name="tottal" id="tottal" placeholder="">
+                  </div>
                 </div>
 
                   <div class="modal-footer">
-                    <button type="submit" name="input" id="btn-add" class="btn btn-warning text-white"><i class= 'fa fa-save'></i> Simpan Data</button>  
-                    <button type="RESET" class="btn btn-danger">Reset</button>
+                    <button type="submit" name="input" id="btn-add" class="btn btn-warning text-white btn-block"><i class= 'fa fa-ticket'></i> PESAN </button>  
                   </form>
                   </div>
                   </div>
@@ -598,6 +607,18 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('assets/js/main.js')?>"></script>
+
+  <!-- PENJUMLAHAN TIKET -->
+  <script>
+function sum() {
+      var jumlah = document.getElementById('jumlah').value;
+      var harga= 10000;
+      var result = parseInt(jumlah) * parseInt(harga);
+      if (!isNaN(result)) {
+         document.getElementById('tottal').value = result;
+      }
+}
+</script>
 
   <!-- AJAX Input -->
   <script>
