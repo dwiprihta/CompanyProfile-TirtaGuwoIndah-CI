@@ -20,7 +20,7 @@ class Tiket extends CI_Controller{
 		$this->form_validation->set_rules('no_telpon','NO TELPON','required');
 		$this->form_validation->set_rules('tgl_kunjungan','TANGGAL KUNJUNGAN','required');
 		$this->form_validation->set_rules('jam_kunjungan','JAM KUNJUNGAN','required');
-		$this->form_validation->set_rules('jumlah','JUMLAH TIKET','required');
+		$this->form_validation->set_rules('jumlah','JUMELAH TIKET','required');
 
 		if ($this->form_validation->run()==FALSE){
 			$this->session->set_flashdata('notif',
