@@ -1,5 +1,11 @@
 <?php
 class M_tiket extends CI_Model{
+
+	function show_all(){
+		 $query=$this->db->get('tbl_tiket');
+		 return $query->result_array();
+	}
+	
 	function add(){
 		$data=[
 			'id_tiket'=>time(),
@@ -22,6 +28,7 @@ class M_tiket extends CI_Model{
 			$this->db->select('*');
 			$this->db->from('tbl_tiket');
 			$this->db->like('id_tiket',$keyword);
+			$this->db->or_like('no_ktp',$keyword);
 			$this->db->or_like('email',$keyword);
 			$this->db->or_like('no_telpon',$keyword);
 			return $this->db->get()->result_array();

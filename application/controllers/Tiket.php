@@ -7,8 +7,10 @@ class Tiket extends CI_Controller{
 	}
 
 	public function index(){
-		$this->load->view('v_tiket');
+		$data['tikets']=$this->M_tiket->show_all();
+		$this->load->view('v_tiket',$data);
 	}
+
 
 	public function add(){
 		//validasi form yang masuk
