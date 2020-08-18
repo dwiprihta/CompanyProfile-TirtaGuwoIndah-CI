@@ -216,7 +216,7 @@
         <?php endforeach;?>
        <!--MODAL ADD TIKETING-->
 
-       <!--MODAL DETIL PEMBAYARAN-->  
+    <!--MODAL DETIL PEMBAYARAN-->  
     <?php foreach ($tikets as $tkt):?>
         <div class="modal fade" id="modalpembayaran<?=$tkt['id_tiket'];?>" tabindex="-1" role="dialog" aria-labelledby="modalTambah" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -229,13 +229,13 @@
                 <div class="alert alert-primary" role="alert">
                       Data konfirmasi tiket tidak bisa diubah, <strong>pastikan anda mengisi data dengan benar!</strong>
                   </div>
-              <form action="<?= base_url('tiket/add');?>" method ="POST">
+              <form action="<?= base_url('tiket/add');?>" method="POST" enctype="multipart/form-data">
 
                   <input type="hidden" class="form-control" required="" name="id_tiket" value="<?=$tkt['id_tiket'];?>" id="no_ktp" placeholder="">
 
                   <div class="form-group">
                     <NO for="no_ktp">No Rekening</label>
-                    <input type="text" class="form-control" required="" name="no_rek"  id="no_ktp" placeholder="No Rekening">
+                    <input type="text" class="form-control" required="" name="no_rek"  id="no_rek" placeholder="No Rekening">
                     <small class="form-text form-danger"><?= form_error('npm');?></small>
                   </div>
 
@@ -246,13 +246,14 @@
 
                   <div class="form-group">
                     <label for="email">Tanggal Transfer</label>
-                    <input type="date" class="form-control" required="" name="tgl_tf">
+                    <input type="date" class="form-control" required="" name="tgl_tf"  id="tgl_tf">
                   </div>
 
                    <div class="form-group">
                     <label for="email">Foto Bukti Transfer</label>
-                    <input type="file" class="form-control" required="" name="foto" id="email" placeholder="Email">
+                    <input type="file" class="form-control" required="" name="foto" id="foto" placeholder="Email">
                   </div>
+                  
                   </div>
                   <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
