@@ -99,15 +99,26 @@
               </div>
               <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title"><?= $tiket['id_tiket'];?> </h5>
+                <h5 class="card-title"><?= $tiket['id_tiket'];?></h5>
                 <p class="card-text"><?= $tiket['nama'];?> (<?= $tiket['email'];?>)</p>
                 <p class="card-text"><?= $tiket['tgl'];?> (<?= $tiket['jam'];?>)</p>
-                <p class="card-text"><?= $tiket['jumlah'];?> Tiket  
-                  <?php if($tiket['status']==1):?>
-                 <span class="badge badge-danger">Pembayaran Gagal</span>
-                  <?php else : ?>
-                  <?php endif;?>
-                </p>
+                <div class="row">
+                  <div class="col-lg-3">
+                    <p class="card-text"><?= $tiket['jumlah'];?> Tiket  </p>
+                  </div>
+                  <div class="col-lg-9">
+                    <?php if($tiket['status']==1):?>
+                      <span class="badge badge-danger">Pembayaran Gagal</span>
+                    <?php elseif ($tiket['status']==2): ?>
+                      <form action="<?php echo base_url('tiket/laporan_pdf');?>" method="post" target="blank">
+                        <input type="hidden" name="tiket" value="<?=$tiket['id_tiket'];?>">
+                        <button type="submit" name="submit" class="btn btn-sm btn-danger ">Cetak Tiket</button>
+                      </form>
+                    <?php endif;?>
+                   </div>
+                </div>
+                
+
               
                 <hr>
                 <?php if($tiket['status']==NULL OR $tiket['status']==1):?>
@@ -121,10 +132,7 @@
                 <?php else : ?>
                 <?php endif;?>
                 <a data-toggle="modal" data-target="#modaltambah<?=$tiket['id_tiket'];?>" href="#" class="btn btn-sm btn-info ">Detail</a>
-                 <?php if($tiket['status']==2):?>
-                 <a href="#" class="btn btn-sm btn-danger ">Cetak Tiket</a>
-                 <?php else : ?>
-                <?php endif;?>
+               
               </div>
               </div>
             </div>

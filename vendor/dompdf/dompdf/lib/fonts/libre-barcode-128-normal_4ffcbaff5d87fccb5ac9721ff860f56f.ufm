@@ -1,0 +1,135 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment https://github.com/PhenX/php-font-lib
+EncodingScheme FontSpecific
+Copyright Copyright 2017 The Libre Barcode Project Authors (lasse@graphicore.de)
+FontName Libre Barcode 128
+FontSubfamily Regular
+UniqueID 1.002;GRCR;LibreBarcode128-Regular
+FullName Libre Barcode 128 Regular
+Version Version 1.002; ttfautohint (v1.6)
+PostScriptName LibreBarcode128-Regular
+LicenseURL http://scripts.sil.org/OFL
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 50
+UnderlinePosition -75
+FontHeightOffset 0
+Ascender 600
+Descender -400
+FontBBox 0 -400 450 600
+StartCharMetrics 219
+U 0 ; WX 0 ; N uni0000 ; G 2
+U 13 ; WX 0 ; N uni000D ; G 1
+U 32 ; WX 330 ; N uni0020 ; G 110
+U 33 ; WX 330 ; N uni0021 ; G 111
+U 34 ; WX 330 ; N uni0022 ; G 112
+U 35 ; WX 330 ; N uni0023 ; G 113
+U 36 ; WX 330 ; N uni0024 ; G 114
+U 37 ; WX 330 ; N uni0025 ; G 115
+U 38 ; WX 330 ; N uni0026 ; G 116
+U 39 ; WX 330 ; N uni0027 ; G 117
+U 40 ; WX 330 ; N uni0028 ; G 118
+U 41 ; WX 330 ; N uni0029 ; G 119
+U 42 ; WX 330 ; N uni002A ; G 120
+U 43 ; WX 330 ; N uni002B ; G 121
+U 44 ; WX 330 ; N uni002C ; G 122
+U 45 ; WX 330 ; N uni002D ; G 123
+U 46 ; WX 330 ; N uni002E ; G 124
+U 47 ; WX 330 ; N uni002F ; G 125
+U 48 ; WX 330 ; N uni0030 ; G 126
+U 49 ; WX 330 ; N uni0031 ; G 127
+U 50 ; WX 330 ; N uni0032 ; G 128
+U 51 ; WX 330 ; N uni0033 ; G 129
+U 52 ; WX 330 ; N uni0034 ; G 130
+U 53 ; WX 330 ; N uni0035 ; G 131
+U 54 ; WX 330 ; N uni0036 ; G 132
+U 55 ; WX 330 ; N uni0037 ; G 133
+U 56 ; WX 330 ; N uni0038 ; G 134
+U 57 ; WX 330 ; N uni0039 ; G 135
+U 58 ; WX 330 ; N uni003A ; G 136
+U 59 ; WX 330 ; N uni003B ; G 137
+U 60 ; WX 330 ; N uni003C ; G 138
+U 61 ; WX 330 ; N uni003D ; G 139
+U 62 ; WX 330 ; N uni003E ; G 140
+U 63 ; WX 330 ; N uni003F ; G 141
+U 64 ; WX 330 ; N uni0040 ; G 142
+U 65 ; WX 330 ; N uni0041 ; G 143
+U 66 ; WX 330 ; N uni0042 ; G 144
+U 67 ; WX 330 ; N uni0043 ; G 145
+U 68 ; WX 330 ; N uni0044 ; G 146
+U 69 ; WX 330 ; N uni0045 ; G 147
+U 70 ; WX 330 ; N uni0046 ; G 148
+U 71 ; WX 330 ; N uni0047 ; G 149
+U 72 ; WX 330 ; N uni0048 ; G 150
+U 73 ; WX 330 ; N uni0049 ; G 151
+U 74 ; WX 330 ; N uni004A ; G 152
+U 75 ; WX 330 ; N uni004B ; G 153
+U 76 ; WX 330 ; N uni004C ; G 154
+U 77 ; WX 330 ; N uni004D ; G 155
+U 78 ; WX 330 ; N uni004E ; G 156
+U 79 ; WX 330 ; N uni004F ; G 157
+U 80 ; WX 330 ; N uni0050 ; G 158
+U 81 ; WX 330 ; N uni0051 ; G 159
+U 82 ; WX 330 ; N uni0052 ; G 160
+U 83 ; WX 330 ; N uni0053 ; G 161
+U 84 ; WX 330 ; N uni0054 ; G 162
+U 85 ; WX 330 ; N uni0055 ; G 163
+U 86 ; WX 330 ; N uni0056 ; G 164
+U 87 ; WX 330 ; N uni0057 ; G 165
+U 88 ; WX 330 ; N uni0058 ; G 166
+U 89 ; WX 330 ; N uni0059 ; G 167
+U 90 ; WX 330 ; N uni005A ; G 168
+U 91 ; WX 330 ; N uni005B ; G 169
+U 92 ; WX 330 ; N uni005C ; G 170
+U 93 ; WX 330 ; N uni005D ; G 171
+U 94 ; WX 330 ; N uni005E ; G 172
+U 95 ; WX 330 ; N uni005F ; G 173
+U 96 ; WX 330 ; N uni0060 ; G 174
+U 97 ; WX 330 ; N uni0061 ; G 175
+U 98 ; WX 330 ; N uni0062 ; G 176
+U 99 ; WX 330 ; N uni0063 ; G 177
+U 100 ; WX 330 ; N uni0064 ; G 178
+U 101 ; WX 330 ; N uni0065 ; G 179
+U 102 ; WX 330 ; N uni0066 ; G 180
+U 103 ; WX 330 ; N uni0067 ; G 181
+U 104 ; WX 330 ; N uni0068 ; G 182
+U 105 ; WX 330 ; N uni0069 ; G 183
+U 106 ; WX 330 ; N uni006A ; G 184
+U 107 ; WX 330 ; N uni006B ; G 185
+U 108 ; WX 330 ; N uni006C ; G 186
+U 109 ; WX 330 ; N uni006D ; G 187
+U 110 ; WX 330 ; N uni006E ; G 188
+U 111 ; WX 330 ; N uni006F ; G 189
+U 112 ; WX 330 ; N uni0070 ; G 190
+U 113 ; WX 330 ; N uni0071 ; G 191
+U 114 ; WX 330 ; N uni0072 ; G 192
+U 115 ; WX 330 ; N uni0073 ; G 193
+U 116 ; WX 330 ; N uni0074 ; G 194
+U 117 ; WX 330 ; N uni0075 ; G 195
+U 118 ; WX 330 ; N uni0076 ; G 196
+U 119 ; WX 330 ; N uni0077 ; G 197
+U 120 ; WX 330 ; N uni0078 ; G 198
+U 121 ; WX 330 ; N uni0079 ; G 199
+U 122 ; WX 330 ; N uni007A ; G 200
+U 123 ; WX 330 ; N uni007B ; G 201
+U 124 ; WX 330 ; N uni007C ; G 202
+U 125 ; WX 330 ; N uni007D ; G 203
+U 126 ; WX 330 ; N uni007E ; G 204
+U 160 ; WX 330 ; N uni00A0 ; G 205
+U 194 ; WX 330 ; N uni00C2 ; G 206
+U 195 ; WX 330 ; N uni00C3 ; G 207
+U 196 ; WX 330 ; N uni00C4 ; G 208
+U 197 ; WX 330 ; N uni00C5 ; G 209
+U 198 ; WX 330 ; N uni00C6 ; G 210
+U 199 ; WX 330 ; N uni00C7 ; G 211
+U 200 ; WX 330 ; N uni00C8 ; G 212
+U 201 ; WX 330 ; N uni00C9 ; G 213
+U 202 ; WX 330 ; N uni00CA ; G 214
+U 203 ; WX 330 ; N uni00CB ; G 215
+U 204 ; WX 330 ; N uni00CC ; G 216
+U 205 ; WX 330 ; N uni00CD ; G 217
+U 206 ; WX 390 ; N uni00CE ; G 218
+EndCharMetrics
+EndFontMetrics

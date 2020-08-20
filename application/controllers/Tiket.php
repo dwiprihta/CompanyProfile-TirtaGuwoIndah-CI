@@ -104,4 +104,14 @@ class Tiket extends CI_Controller{
 				}
 			}
 		}
+
+		public function laporan_pdf(){
+			$keyword = $this->input->post('tiket');
+			$data['tikets']=$this->M_tiket->show($keyword);
+
+			$this->load->library('pdf');
+			$this->pdf->setPaper('A4', 'potrait');
+			$this->pdf->filename = "Tiket-TGI.pdf";
+			$this->pdf->load_view('v_print_tiket', $data);
+		}
 }
