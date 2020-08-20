@@ -1,12 +1,23 @@
 <?php
 class M_tiket extends CI_Model{
 
-	function show_all(){
-		 $query=$this->db->get('tbl_tiket');
-		 return $query->result_array();
+	
+	public function show($keyword){
+		$this->db->select('*');
+		$this->db->from('v_pembayaran');
+		$this->db->like('id_tiket',$keyword);
+		$this->db->or_like('no_ktp',$keyword);
+		$this->db->or_like('email',$keyword);
+		$this->db->or_like('no_telpon',$keyword);
+		return $this->db->get()->result_array();
+	}
+
+	public function show_payment(){
+		$this->db->get('tbl_pembayaran');
+		return $this->db->get()->result_array();
 	}
 	
-	function add(){
+	public function add(){
 		$data=[
 			'id_tiket'=>time(),
 			'no_ktp'=>$this->input->post('no_ktp'),
@@ -24,13 +35,18 @@ class M_tiket extends CI_Model{
 		$this->db->insert('tbl_tiket',$data);		
 	}
 
-	public function get_tiket_search($keyword){
-			$this->db->select('*');
-			$this->db->from('tbl_tiket');
-			$this->db->like('id_tiket',$keyword);
-			$this->db->or_like('no_ktp',$keyword);
-			$this->db->or_like('email',$keyword);
-			$this->db->or_like('no_telpon',$keyword);
-			return $this->db->get()->result_array();
-		}
+	public function add_konfirmasi(){
+		$filename = $this->upload->data('file_name');
+		$data=[
+			'id_tiket'=>$this->input->post('id_tiket'),
+			'no_rek'=>$this->input->post('no_rek'),
+			'nama_rek'=>$this->input->post('nama'),
+			'tgl_tf'=>$this->input->post('tgl_tf'),
+			'foto'=>$filename,	
+			'status'=>0,
+		];
+		$this->db->insert('tbl_pembayaran',$data);	
+	}
+
+	
 }	

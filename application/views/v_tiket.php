@@ -69,7 +69,7 @@
     <div class="container" data-aos="fade-in">
       <h1>DATA PEMESANAN TIKET</h1>
     <h2>Cari Data tiketmu (dengan mengetik No Tiket, NO KTP, email, atau No Telfon)</h2>
-     <form class="form-inline" action="<?php echo base_url('tiket/search');?>" target="blank" method="POST"> 
+     <form class="form-inline" action="<?php echo base_url('tiket/search');?>" method="POST"> 
             <div class="form-group">
               <input type="text" style="width:410px" required="" class="form-control" name="tiket" id="inputAddress" placeholder="Ketik keyword"> 
             </div>
@@ -103,25 +103,25 @@
                 <p class="card-text"><?= $tiket['nama'];?> (<?= $tiket['email'];?>)</p>
                 <p class="card-text"><?= $tiket['tgl'];?> (<?= $tiket['jam'];?>)</p>
                 <p class="card-text"><?= $tiket['jumlah'];?> Tiket  
-                  <?php if($tiket['status']==2):?>
+                  <?php if($tiket['status']==1):?>
                  <span class="badge badge-danger">Pembayaran Gagal</span>
                   <?php else : ?>
                   <?php endif;?>
                 </p>
               
                 <hr>
-                <?php if($tiket['status']==0 OR $tiket['status']==2):?>
+                <?php if($tiket['status']==NULL OR $tiket['status']==1):?>
                   <a data-toggle="modal" data-target="#modalpembayaran<?=$tiket['id_tiket'];?>" href="#" class="btn btn-sm btn-primary">Belum dibayar</a>
-                <?php elseif($tiket['status']==1):?>
+                <?php elseif($tiket['status']==0):?>
                   <a data-toggle="modal" data-target="#modalkonfirm" class="btn btn-sm btn-warning text-white">Menunggu Konfirmasi</a>
-                <?php elseif($tiket['status']==3):?>
+                <?php elseif($tiket['status']==2):?>
                   <a data-toggle="modal" data-target="#modalaktif"  class="btn btn-sm btn-success text-white">Tiket Aktif</a>
-                <?php elseif($tiket['status']==4):?>
+                <?php elseif($tiket['status']==3):?>
                   <a data-toggle="modal" data-target="#modaldigunakan" class="btn btn-sm btn-secondary text-white">Sudah digunakan</a>
                 <?php else : ?>
                 <?php endif;?>
                 <a data-toggle="modal" data-target="#modaltambah<?=$tiket['id_tiket'];?>" href="#" class="btn btn-sm btn-info ">Detail</a>
-                 <?php if($tiket['status']==3):?>
+                 <?php if($tiket['status']==2):?>
                  <a href="#" class="btn btn-sm btn-danger ">Cetak Tiket</a>
                  <?php else : ?>
                 <?php endif;?>
@@ -147,64 +147,71 @@
               </div>
               <div class="modal-body p-4">
               <form action="<?= base_url('tiket/add');?>" method ="POST">
-                  <div class="form-group">
-                    <NO for="no_ktp">NO KTP (Nomor Induk Kependudukan)</label>
-                    <input type="text" class="form-control" required="" name="no_ktp" value="<?=$tkt['id_tiket'];?>" id="no_ktp" placeholder="NIK">
-                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+               <div class="form-group">
+                 <h1><b><center><?=$tkt['id_tiket'];?></center></b></h1><hr>
+                    <!-- <NO for="no_ktp">ID Tiket</label>
+                    <input type="text" disabled="" class="form-control" required="" name="no_ktp" value="<?=$tkt['id_tiket'];?>" id="no_ktp" placeholder="NIK">
+                    <small class="form-text form-danger"><?= form_error('npm');?></small> -->
                   </div>
+
+                  <!-- <div class="form-group">
+                    <NO for="no_ktp">NO KTP (Nomor Induk Kependudukan)</label>
+                    <input type="text" disabled="" class="form-control" required="" name="no_ktp" value="<?=$tkt['no_ktp'];?>" id="no_ktp" placeholder="NIK">
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+                  </div> -->
 
                   <div class="form-group">
                    <label for="nama">Nama</label>
-                    <input type="text" class="form-control" value="<?=$tkt['nama'];?>"  required="" name="nama" id="nama" placeholder="Nama">  
+                    <input type="text" disabled="" class="form-control" value="<?=$tkt['nama'];?>"  required="" name="nama" id="nama" placeholder="Nama">  
                   </div>
 
-                  <div class="form-group"  required="">
+                  <!-- <div class="form-group"  required="">
                     <label>Jenis Kelamin</label><br>
                     <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="jenis_kemain1" name="jk" value="laki-laki" <?php if($tkt['jenis_kelamin']=='laki-laki'){ echo 'checked';}?> class="custom-control-input">
-                    <label class="custom-control-label" for="jenis_kemain1">LAKI-LAKI</label>
+                    <input type="radio" disabled="" id="jenis_kemain1" name="jk" value="laki-laki" <?php if($tkt['jenis_kelamin']=='laki-laki'){ echo 'checked';}?> class="custom-control-input">
+                    <label class="custom-control-label"  for="jenis_kemain1">LAKI-LAKI</label>
                   </div>
 
                   <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="jenis_kemain2" name="jk" value="perempuan" <?php if ($tkt['jenis_kelamin']=='perempuan'){ echo 'checked';}?> class="custom-control-input">
+                    <input type="radio" disabled="" id="jenis_kemain2" name="jk" value="perempuan" <?php if ($tkt['jenis_kelamin']=='perempuan'){ echo 'checked';}?> class="custom-control-input">
                     <label class="custom-control-label" for="jenis_kemain2">PEREMPUAN</label>
                   </div> 
                     <small class="form-text text-danger"><?= form_error('jk');?></small>
-                  </div> 
+                  </div>  -->
 
                   <div class="form-group">
                     <label for="email">email</label>
-                    <input type="email" class="form-control" value="<?=$tkt['email'];?>"  required="" name="email" id="email" placeholder="Email">
+                    <input type="email" disabled="" class="form-control" value="<?=$tkt['email'];?>"  required="" name="email" id="email" placeholder="Email">
                   </div>
 
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="alamat">Alamat</label>
-                    <input type="text" class="form-control"  required="" value="<?=$tkt['alamat'];?>" name="alamat" id="alamat" placeholder="Alamat">
+                    <input type="text" disabled="" class="form-control"  required="" value="<?=$tkt['alamat'];?>" name="alamat" id="alamat" placeholder="Alamat">
                   </div>
 
                   <div class="form-group">
                     <label for="no_telpon">No Telpon</label>
-                    <input type="text" class="form-control"  required="" value="<?=$tkt['no_telpon'];?>" name="no_telpon" id="no_telpon" placeholder="No Telpon">
-                  </div>
+                    <input type="text" disabled="" class="form-control"  required="" value="<?=$tkt['no_telpon'];?>" name="no_telpon" id="no_telpon" placeholder="No Telpon">
+                  </div> -->
 
                   <div class="form-group">
                     <label for="tgl_kunjungan">Tanggal Kunjungan</label>
-                    <input type="date" class="form-control" value="<?=$tkt['tgl'];?>" required="" name="tgl_kunjungan" id="tgl_kunjungan" placeholder="">
+                    <input type="date" disabled="" class="form-control" value="<?=$tkt['tgl'];?>" required="" name="tgl_kunjungan" id="tgl_kunjungan" placeholder="">
                     </div>
 
                   <div class="form-group">
                     <label for="jam_kunjungan">Jam Kunjungan</label>
-                    <input type="time" class="form-control" value="<?=$tkt['jam'];?>"  required="" name="jam_kunjungan" id="jam_kunjungan" placeholder="">
+                    <input type="time" disabled="" class="form-control" value="<?=$tkt['jam'];?>"  required="" name="jam_kunjungan" id="jam_kunjungan" placeholder="">
                   </div>
 
                    <div class="form-group">
                     <label for="jumlah">Jumlah Tiket</label>
-                    <input type="number" min="1" class="form-control" value="<?=$tkt['jumlah'];?>"  required="" name="jumlah" id="jumlah" placeholder="" onkeyup="sum();" onchange="sum();">
+                    <input type="number" disabled="" min="1" class="form-control" value="<?=$tkt['jumlah'];?>"  required="" name="jumlah" id="jumlah" placeholder="" onkeyup="sum();" onchange="sum();">
                   </div>
 
                   <div class="form-group">
                     <label for="tottal">Total bayar</label>
-                    <input readonly="" type="number" min="1" value="<?=$tkt['tottal'];?>" class="form-control"  required="" name="tottal" id="tottal" placeholder="">
+                    <input readonly="" disabled="" type="number" min="1" value="<?=$tkt['tottal'];?>" class="form-control"  required="" name="tottal" id="tottal" placeholder="">
                   </div>
                 </div>
   
@@ -229,9 +236,9 @@
                 <div class="alert alert-primary" role="alert">
                       Data konfirmasi tiket tidak bisa diubah, <strong>pastikan anda mengisi data dengan benar!</strong>
                   </div>
-              <form action="<?= base_url('tiket/add');?>" method="POST" enctype="multipart/form-data">
+              <form action="<?= base_url('tiket/add_konfirmasi');?>" method="POST" enctype="multipart/form-data">
 
-                  <input type="hidden" class="form-control" required="" name="id_tiket" value="<?=$tkt['id_tiket'];?>" id="no_ktp" placeholder="">
+                  <input type="hidden" class="form-control" required="" name="id_tiket" value="<?=$tkt['id_tiket'];?>" id="id_tiket" placeholder="">
 
                   <div class="form-group">
                     <NO for="no_ktp">No Rekening</label>
@@ -257,7 +264,7 @@
                   </div>
                   <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Simpan</button>
+                  <button type="submit" name="input" class="btn btn-primary">Simpan</button>
                 </div>
                 </form>
               </div>
