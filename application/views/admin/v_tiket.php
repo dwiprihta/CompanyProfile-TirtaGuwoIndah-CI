@@ -43,13 +43,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Post Lists
+      <?=$tittle;?>
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tiket Online</a></li>
-        <li class="active">Tiket Aktif</li>
+        <li><a href="#">Post</a></li>
+        <li class="active">Lists</li>
       </ol>
     </section>
 
@@ -68,45 +68,22 @@
               <table id="example1" class="table table-striped" style="font-size:13px;">
                 <thead>
                 <tr>
-      					<th>Gambar</th>
-      					<th>Judul</th>
-      					<th>Tanggal</th>
-      					<th>Author</th>
-      					<th>Baca</th>
-                    <th>Kategori</th>  
-                    <th style="text-align:right;">Aksi</th>
+      					<th>Id Tiket</th>
+                <th>Nama</th>
+                <th>Id Email</th>
+      					<th>Tanggal Kunjungan</th>
+      					<th>Jam Kunjungan</th>
+                <th style="text-align:right;">Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
           				<?php
           					$no=0;
-          					foreach ($data->result_array() as $i) :
-          					   $no++;
-          					   $tulisan_id=$i['tulisan_id'];
-          					   $tulisan_judul=$i['tulisan_judul'];
-          					   $tulisan_isi=$i['tulisan_isi'];
-          					   $tulisan_tanggal=$i['tanggal'];
-          					   $tulisan_author=$i['tulisan_author'];
-          					   $tulisan_gambar=$i['tulisan_gambar'];
-          					   $tulisan_views=$i['tulisan_views'];
-                       $kategori_id=$i['tulisan_kategori_id'];
-                       $kategori_nama=$i['tulisan_kategori_nama'];
-                       
-                    ?>
-                <tr>
-                  <td><img src="<?php echo base_url().'assetsadm/images/'.$tulisan_gambar;?>" style="width:90px;"></td>
-                  <td><?php echo $tulisan_judul;?></td>
-                  
-        				  <td><?php echo $tulisan_tanggal;?></td>
-        				  <td><?php echo $tulisan_author;?></td>
-        				  <td><?php echo $tulisan_views;?></td>
-        				  <td><?php echo $kategori_nama;?></td>
-                  <td style="text-align:right;">
-                        <a class="btn" href="<?php echo base_url().'admin/tulisan/get_edit/'.$tulisan_id;?>"><span class="fa fa-pencil"></span></a>
-                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $tulisan_id;?>"><span class="fa fa-trash"></span></a>
-                  </td>
-                </tr>
-				<?php endforeach;?>
+          					foreach ($pesan as $pesans) :?>
+                    <tr>
+                      <td><<?=$pesans['id_tiket'];?></td>
+                    </tr>
+				          <?php endforeach;?>
                 </tbody>
               </table>
             </div>

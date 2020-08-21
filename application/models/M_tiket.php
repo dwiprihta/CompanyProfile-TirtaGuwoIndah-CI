@@ -47,6 +47,35 @@ class M_tiket extends CI_Model{
 		];
 		$this->db->insert('tbl_pembayaran',$data);	
 	}
+	
+
+	//=====================ADMIN PESAN================================//
+	public function get_tiket_pesan(){
+	$tiket=$this->db->get_where('v_tiket',['status'=>NULL]);
+	return $tiket->result_array();
+	}
+
+	public function get_tiket_menunggu(){
+		$tiket=$this->db->get_where('v_tiket',['status'=>0]);
+		return $tiket->result_array();
+	}
+
+	public function get_tiket_ditolak(){
+		$tiket=$this->db->get_where('v_tiket',['status'=>1]);
+		return $tiket->result_array();
+	}
+
+	public function get_tiket_aktif(){
+		$tiket=$this->db->get_where('v_tiket',['status'=>2]);
+		return $tiket->result_array();
+	}
+
+	public function get_tiket_digunakan(){
+		$tiket=$this->db->get_where('v_tiket',['status'=>3]);
+		return $tiket->result_array();
+	}
+
+
 
 	
 }	
