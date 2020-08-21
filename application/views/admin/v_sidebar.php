@@ -64,7 +64,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'tiket/tiket_dipesan'?>"><i class="fa fa-check"></i> Tiket Aktif</a></li>
+             <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-check"></i> Tiket Aktif</a></li>
              <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-envelope"></i> Menunggu Perstujuan</a></li>
              <li><a href="<?php echo base_url().'admin/tiket/tiket_dipesan'?>"><i class="fa fa-shield"></i> Belum Dibayar</a></li>
              <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-cut"></i> Sudah Digunakan</a></li>
@@ -81,7 +81,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/tulisan/add_tulisan'?>"><i class="fa fa-thumb-tack"></i> Tambah </a></li>
+            <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-thumb-tack"></i> Tambah </a></li>
             <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-list"></i> Daftar Artikel</a></li>
             <li><a href="<?php echo base_url().'admin/kategori'?>"><i class="fa fa-wrench"></i> Kategori</a></li>
           </ul>

@@ -60,14 +60,13 @@
           <div class="box">
            
           <div class="box">
-            <div class="box-header">
-              <a class="btn btn-success btn-flat" href="<?php echo base_url().'admin/tulisan/add_tulisan'?>"><span class="fa fa-plus"></span> Add New</a>
-            </div>
+
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-striped" style="font-size:13px;">
                 <thead>
                 <tr>
+                <th>NO</th>
       					<th>Id Tiket</th>
                 <th>Nama</th>
                 <th>Id Email</th>
@@ -78,10 +77,16 @@
                 </thead>
                 <tbody>
           				<?php
-          					$no=0;
+          					$no=1;
           					foreach ($pesan as $pesans) :?>
                     <tr>
-                      <td><<?=$pesans['id_tiket'];?></td>
+                      <td><?=$no++;?></td>
+                      <td><?=$pesans['id_tiket'];?></td>
+                      <td><?=$pesans['nama'];?></td>
+                      <td><?=$pesans['email'];?></td>
+                      <td><?=$pesans['tgl'];?></td>
+                      <td><?=$pesans['jam'];?></td>
+                       <td><?=$pesans['jam'];?></td>
                     </tr>
 				          <?php endforeach;?>
                 </tbody>
@@ -110,13 +115,13 @@
 
 
 	
-	<?php foreach ($data->result_array() as $i) :
-              $tulisan_id=$i['tulisan_id'];
-              $tulisan_judul=$i['tulisan_judul'];
-              $tulisan_gambar=$i['tulisan_gambar'];
+	<?php //foreach ($data->result_array() as $i) :
+              // $tulisan_id=$i['tulisan_id'];
+              // $tulisan_judul=$i['tulisan_judul'];
+              // $tulisan_gambar=$i['tulisan_gambar'];
             ?>
 	<!--Modal Hapus Pengguna-->
-        <div class="modal fade" id="ModalHapus<?php echo $tulisan_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!-- <div class="modal fade" id="ModalHapus<?php echo $tulisan_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -137,8 +142,8 @@
                     </form>
                 </div>
             </div>
-        </div>
-	<?php endforeach;?>
+        </div> -->
+	<?php //endforeach;?>
 	
 	
 
