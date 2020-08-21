@@ -70,7 +70,7 @@
         </li>
 
         <li class="treeview">
-          <a href="#">
+          <a href="">
             <i class="fa fa-star"></i>
             <span>Fasilitas</span>
             <span class="pull-right-container">
