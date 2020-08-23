@@ -118,8 +118,6 @@
                    </div>
                 </div>
                 
-
-              
                 <hr>
                  <?php 
                  $tgl=date('Y-m-d');

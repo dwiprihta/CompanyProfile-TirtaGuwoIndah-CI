@@ -375,9 +375,9 @@
         </div>
 
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
-        <?php echo $this->session->flashdata('msg');?>
+        
           <div class="col-xl-9 col-lg-12 mt-4">
-            <form action="<?php echo base_url().'kontak/kirim_pesan'?>" method="post" role="form" class="php-email-form">
+            <form action="<?php echo base_url().'kontak/kirim_pesan'?>" method="post" role="form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="nama" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Nama Anda" />
@@ -393,10 +393,9 @@
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
-              <div class="text-center"><button type="submit">Kirim Pesan</button></div>
+              <div class="text-center"> <button type="submit" name="input" id="btn-add" class="btn btn-warning text-white btn-block"><i class= 'fa fa-ticket'></i> KIRIM PESAN </button> </div>
             </form>
           </div>
-
         </div>
 
       </div>

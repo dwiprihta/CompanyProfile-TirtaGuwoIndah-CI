@@ -48,6 +48,20 @@ class M_tiket extends CI_Model{
 		$this->db->insert('tbl_pembayaran',$data);	
 	}
 
+	public function update_konfirmasi(){
+		$data=[
+			'id_tiket'=>$this->input->post('id_tiket'),
+			'no_rek'=>$this->input->post('no_rek'),
+			'nama_rek'=>$this->input->post('nama_rek'),
+			'tgl_tf'=>$this->input->post('tgl_tf'),
+			'foto'=>$this->input->post('foto'),
+			'status'=>$this->input->post('status'),
+		];
+
+		$this->db->where('id_tiket',$this->input->post('id_tiket'));
+		$this->db->update('tbl_pembayaran',$data);
+	}
+
 
 	//=====================ADMIN PESAN================================//
 	public function get_tiket_pesan(){

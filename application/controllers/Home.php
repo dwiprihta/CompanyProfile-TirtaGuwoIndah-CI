@@ -15,4 +15,8 @@ class Home extends CI_Controller{
 		$x['galeri']=$this->m_galeri->get_galeri_home();
 		$this->load->view('v_home',$x);
 	}
+
+	function success(){
+		$this->load->view('v_success');
+	}
 }

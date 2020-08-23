@@ -28,7 +28,8 @@ class Kontak extends CI_Controller{
 		$email=htmlspecialchars($this->input->post('email',TRUE),ENT_QUOTES);
 		$pesan=htmlspecialchars(trim($this->input->post('pesan',TRUE)),ENT_QUOTES);
 		$this->m_kontak->kirim_pesan($nama,$email,$pesan);
-		$this->session->set_flashdata('msg',"<div class='alert alert-info'>Terima kasih telah menghubungi kami.</div>");
-		redirect('home');
-	}
+		$this->session->set_flashdata('msg','Terimakasih atas pesan anda,
+		kami berharap anda puas dengan fasilitas kami!');
+				redirect('home/success');
+			}
 }
