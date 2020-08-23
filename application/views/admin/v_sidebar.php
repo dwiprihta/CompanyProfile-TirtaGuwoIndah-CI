@@ -64,10 +64,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-             <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-check"></i> Tiket Aktif</a></li>
-             <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-envelope"></i> Menunggu Perstujuan</a></li>
+             <li><a href="<?php echo base_url().'admin/tiket/tiket_aktif'?>"><i class="fa fa-check"></i> Tiket Aktif</a></li>
+             <li><a href="<?php echo base_url().'admin/tiket/tiket_tunggu'?>"><i class="fa fa-envelope"></i> Menunggu Perstujuan</a></li>
              <li><a href="<?php echo base_url().'admin/tiket/tiket_dipesan'?>"><i class="fa fa-shield"></i> Belum Dibayar</a></li>
-             <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-cut"></i> Sudah Digunakan</a></li>
+              <li><a href="<?php echo base_url().'admin/tiket/tiket_ditolak'?>"><i class="fa fa-times"></i> Payment Ditolak</a></li>
+             <li><a href="<?php echo base_url().'admin/tiket/tiket_digunakan'?>"><i class="fa fa-cut"></i> Sudah Digunakan</a></li>
           </ul>
         </li>
 

@@ -121,7 +121,11 @@
 
               
                 <hr>
-                <?php if($tiket['status']==NULL OR $tiket['status']==1):?>
+                 <?php 
+                 $tgl=date('Y-m-d');
+                 if($tgl>$tiket['tgl'] AND $tiket['status']==NULL):?>
+                  <a href="#" class="btn btn-sm btn-danger">kadaluwarsa</a>
+                <?php elseif($tiket['status']==NULL OR $tiket['status']==1):?>
                   <a data-toggle="modal" data-target="#modalpembayaran<?=$tiket['id_tiket'];?>" href="#" class="btn btn-sm btn-primary">Belum dibayar</a>
                 <?php elseif($tiket['status']==0):?>
                   <a data-toggle="modal" data-target="#modalkonfirm" class="btn btn-sm btn-warning text-white">Menunggu Konfirmasi</a>

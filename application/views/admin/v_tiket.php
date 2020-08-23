@@ -72,7 +72,7 @@
                 <th>Id Email</th>
       					<th>Tanggal Kunjungan</th>
       					<th>Jam Kunjungan</th>
-                <th style="text-align:right;">Aksi</th>
+                <th class="text-center">Status</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -81,12 +81,27 @@
           					foreach ($pesan as $pesans) :?>
                     <tr>
                       <td><?=$no++;?></td>
-                      <td><?=$pesans['id_tiket'];?></td>
+                      <td> <a href="#" data-toggle="modal" data-target="#modaldetil<?=$pesans['id_tiket'];?>"><?=$pesans['id_tiket'];?></a></td>
                       <td><?=$pesans['nama'];?></td>
                       <td><?=$pesans['email'];?></td>
                       <td><?=$pesans['tgl'];?></td>
                       <td><?=$pesans['jam'];?></td>
-                       <td><?=$pesans['jam'];?></td>
+                      <td>
+                      <?php 
+                        $tgl=date('Y-m-d');
+                        if($pesans['status']==NULL):?>
+                          <a href="#" class="btn btn-sm btn-info">Belum dibayar</a>
+                        <?php elseif($pesans['status']==0):?>
+                           <a data-toggle="modal" data-target="#modalkonfirm" class="btn btn-sm btn-warning text-white">Cek Konfirmasi</a>
+                        <?php elseif($pesans['status']==1):?>
+                           <a data-toggle="modal" data-target="#modalpembayaran<?=$pesans['id_tiket'];?>" href="#" class="btn btn-sm btn-danger">Ditolak</a>
+                        <?php elseif($pesans['status']==2):?>
+                          <a data-toggle="modal" data-target="#modalaktif"  class="btn btn-sm btn-success text-white">Tiket Aktif</a>
+                        <?php elseif($pesans['status']==3):?>
+                           <a data-toggle="modal" data-target="#modaldigunakan" class="btn btn-sm btn-secondary text-white">Sudah digunakan</a>
+                        <?php else : ?>
+                        <?php endif;?>
+                    
                     </tr>
 				          <?php endforeach;?>
                 </tbody>
@@ -113,39 +128,166 @@
 </div>
 <!-- ./wrapper -->
 
+<!--MODAL DETSIL TIKETING-->  
+      <?php foreach ($pesan as $pesans):?>
+        <div class="modal fade" id="modaldetil<?=$pesans['id_tiket'];?>" tabindex="-1" role="dialog" aria-labelledby="modalTambah" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel"><I class="fa fa-user"></i> DETAIL TIKET</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class='fa fa-times-circle'></i></button>
+              </div>
+              <div class="modal-body p-4">
+              <form action="<?= base_url('tiket/add');?>" method ="POST">
+               <div class="form-group">
+                 <h1><b><center><?=$pesans['id_tiket'];?></center></b></h1><hr>
+                    <NO for="no_ktp">ID Tiket</label>
+                    <input type="text" disabled="" class="form-control" required="" name="no_ktp" value="<?=$pesans['id_tiket'];?>" id="no_ktp" placeholder="NIK">
+                    <small class="form-text form-danger"><?= form_error('npm');?></small> -->
+                  </div>
 
-	
-	<?php //foreach ($data->result_array() as $i) :
-              // $tulisan_id=$i['tulisan_id'];
-              // $tulisan_judul=$i['tulisan_judul'];
-              // $tulisan_gambar=$i['tulisan_gambar'];
-            ?>
-	<!--Modal Hapus Pengguna-->
-        <!-- <div class="modal fade" id="ModalHapus<?php echo $tulisan_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Berita</h4>
+                  <div class="form-group">
+                    <NO for="no_ktp">NO KTP (Nomor Induk Kependudukan)</label>
+                    <input type="text" disabled="" class="form-control" required="" name="no_ktp" value="<?=$pesans['no_ktp'];?>" id="no_ktp" placeholder="NIK">
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+                  </div>
+
+                  <div class="form-group">
+                   <label for="nama">Nama</label>
+                    <input type="text" disabled="" class="form-control" value="<?=$pesans['nama'];?>"  required="" name="nama" id="nama" placeholder="Nama">  
+                  </div>
+
+                  <div class="form-group"  required="">
+                    <label>Jenis Kelamin</label><br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" disabled="" id="jenis_kemain1" name="jk" value="laki-laki" <?php if($pesans['jenis_kelamin']=='laki-laki'){ echo 'checked';}?> class="custom-control-input">
+                    <label class="custom-control-label"  for="jenis_kemain1">LAKI-LAKI</label>
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" disabled="" id="jenis_kemain2" name="jk" value="perempuan" <?php if ($pesans['jenis_kelamin']=='perempuan'){ echo 'checked';}?> class="custom-control-input">
+                    <label class="custom-control-label" for="jenis_kemain2">PEREMPUAN</label>
+                  </div> 
+                    <small class="form-text text-danger"><?= form_error('jk');?></small>
+                  </div> 
+
+                  <div class="form-group">
+                    <label for="email">email</label>
+                    <input type="email" disabled="" class="form-control" value="<?=$pesans['email'];?>"  required="" name="email" id="email" placeholder="Email">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <input type="text" disabled="" class="form-control"  required="" value="<?=$pesans['alamat'];?>" name="alamat" id="alamat" placeholder="Alamat">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="no_telpon">No Telpon</label>
+                    <input type="text" disabled="" class="form-control"  required="" value="<?=$pesans['no_telpon'];?>" name="no_telpon" id="no_telpon" placeholder="No Telpon">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tgl_kunjungan">Tanggal Kunjungan</label>
+                    <input type="date" disabled="" class="form-control" value="<?=$pesans['tgl'];?>" required="" name="tgl_kunjungan" id="tgl_kunjungan" placeholder="">
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/tulisan/hapus_tulisan'?>" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">       
-							       <input type="hidden" name="kode" value="<?php echo $tulisan_id;?>"/> 
-                     <input type="hidden" value="<?php echo $tulisan_gambar;?>" name="gambar">
-                            <p>Apakah Anda yakin mau menghapus Posting <b><?php echo $tulisan_judul;?></b> ?</p>
-                               
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Hapus</button>
-                    </div>
-                    </form>
+
+                  <div class="form-group">
+                    <label for="jam_kunjungan">Jam Kunjungan</label>
+                    <input type="time" disabled="" class="form-control" value="<?=$pesans['jam'];?>"  required="" name="jam_kunjungan" id="jam_kunjungan" placeholder="">
+                  </div>
+
+                   <div class="form-group">
+                    <label for="jumlah">Jumlah Tiket</label>
+                    <input type="number" disabled="" min="1" class="form-control" value="<?=$pesans['jumlah'];?>"  required="" name="jumlah" id="jumlah" placeholder="" onkeyup="sum();" onchange="sum();">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tottal">Total bayar</label>
+                    <input readonly="" disabled="" type="number" min="1" value="<?=$pesans['tottal'];?>" class="form-control"  required="" name="tottal" id="tottal" placeholder="">
+                  </div>
                 </div>
+  
+                  </form>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <?php endforeach;?>
+       <!--MODAL DETAIL TIKETING-->
+
+       <!-- MODAL KONFIRMASI  -->
+       <?php foreach ($pesan as $pesans):?>
+        <div class="modal fade" id="modalkonfirm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">KONFIRMASI PEMBAYARAN TIKET</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row" style="margin-bottom:30px; margin:4px auto;">
+                   <!-- FORM SETUJU -->
+                    <form action="<?= base_url('tiket/update');?>" method="POST" class="mb-5">
+                    <h1><b><center><img src="<?= base_url('assets/img/bukti_tf/').$pesans['foto'];?>" alt="foto"/></center></b></h1><hr>
+
+                    <div class="form-group">
+                    <NO for="no_ktp">ID Tiket</label>
+                    <input type="text" name="id_tiket" id="id_tiket"  value="<?=$pesans['id_tiket'];?>" disabled="" class="form-control" required="" placeholder="NIK">
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+                    </div>
+
+                    <div class="form-group">
+                    <NO for="no_ktp">Nomor Rekening</label>
+                    <input type="text" name="no_rek" id="no_rek"  value="<?=$pesans['no_rek'];?>" disabled="" class="form-control" required=""  placeholder="NIK">
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+                    </div>
+
+                    <div class="form-group">
+                    <NO for="no_ktp">Nama Pemilik Rekening</label>
+                    <input type="text" name="nama_rek" id="nama_rek"  value="<?=$pesans['nama_rek'];?>" disabled="" class="form-control" required="" placeholder="NIK">
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+                    </div>
+
+                    <div class="form-group">
+                    <NO for="no_ktp">Tanggal Transfer</label>
+                    <input type="text"  name="tgl_tf" id="tgl_tf"  value="<?=$pesans['tgl_tf'];?>" disabled="" class="form-control" required="" placeholder="NIK">
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+                    </div>
+
+                    <div class="form-group">
+                    <input type="hidden" name="foto" id="foto"  value="2" disabled="" class="form-control" required="" >
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+                    </div>
+                    
+                    <div class="form-group">
+                    <input type="hidden" name="status" id="status"  value="<?=$pesans['status'];?>" disabled="" class="form-control" required="" >
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+                    </div><hr>
+
+                    <button type="submit" name="btn-setuju" id="btn-setuju" class="btn btn-info btn-block mtb-5">Setujui Pembayaran</button> 
+                    </form> 
+                  </div>
+                  <!-- FORM SETUJU -->
+
+                  <!-- FORM TIDAK SETUJU -->
+                    <form action="<?= base_url('tiket/update');?>" method="POST" class="mt-5">
+                      <input type="hidden" name="id_tiket" id="id_tiket"  value="<?=$pesans['id_tiket'];?>" disabled="" class="form-control" required="" placeholder="NIK">
+                      <input type="hidden" name="no_rek" id="no_rek"  value="<?=$pesans['no_rek'];?>" disabled="" class="form-control" required=""  placeholder="NIK">
+                      <input type="hidden" name="nama_rek" id="nama_rek"  value="<?=$pesans['nama_rek'];?>" disabled="" class="form-control" required="" placeholder="NIK">
+                      <input type="hidden"  name="tgl_tf" id="tgl_tf"  value="<?=$pesans['tgl_tf'];?>" disabled="" class="form-control" required="" placeholder="NIK">
+                      <input type="hidden" name="foto" id="foto"  value="2" disabled="" class="form-control" required="" >
+                      <input type="hidden" name="status" id="status"  value="<?=$pesans['status'];?>" disabled="" class="form-control" required="" >  
+                    <button type="submit" name="btn-tolak" id="btn-tolak"  class="btn btn-danger btn-block mt-5">Tolak Pembayaran</button> 
+                  </form> 
+                 <!-- FORM TIDAK SETUJU -->
+              </div>
             </div>
-        </div> -->
-	<?php //endforeach;?>
-	
-	
+          </div>
+        </div>
+      <?php endforeach;?>
+       <!-- MODAL KONFIRMASI  -->
 
 
 <!-- jQuery 2.2.3 -->
