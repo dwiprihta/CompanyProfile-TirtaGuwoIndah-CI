@@ -16,6 +16,7 @@
   <link href="<?php echo base_url('assets/img/a2.png');?>" rel="apple-touch-icon">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
+
   <link rel="stylesheet" href="<?php echo base_url().'assetsadm/bootstrap/css/bootstrap.min.css'?>">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url().'assetsadm/font-awesome/css/font-awesome.min.css'?>">
@@ -54,6 +55,25 @@
             </span>
           </a>
         </li>
+
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-ticket"></i>
+            <span>Tiketing Online</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+             <li><a href="<?php echo base_url().'admin/tiket/tiket_aktif'?>"><i class="fa fa-check"></i> Tiket Aktif</a></li>
+             <li><a href="<?php echo base_url().'admin/tiket/tiket_tunggu'?>"><i class="fa fa-envelope"></i> Menunggu Perstujuan</a></li>
+             <li><a href="<?php echo base_url().'admin/tiket/tiket_dipesan'?>"><i class="fa fa-shield"></i> Belum Dibayar</a></li>
+              <li><a href="<?php echo base_url().'admin/tiket/tiket_ditolak'?>"><i class="fa fa-times"></i> Payment Ditolak</a></li>
+             <li><a href="<?php echo base_url().'admin/tiket/tiket_digunakan'?>"><i class="fa fa-cut"></i> Sudah Digunakan</a></li>
+          </ul>
+        </li>
+
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-newspaper-o"></i>
@@ -63,7 +83,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/tulisan/add_tulisan'?>"><i class="fa fa-thumb-tack"></i> Tambah </a></li>
+            <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-thumb-tack"></i> Tambah </a></li>
             <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-list"></i> Daftar Artikel</a></li>
             <li><a href="<?php echo base_url().'admin/kategori'?>"><i class="fa fa-wrench"></i> Kategori</a></li>
           </ul>

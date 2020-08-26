@@ -48,8 +48,8 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Post</a></li>
-        <li class="active">Lists</li>
+        <li><a href="#">Tiket Online</a></li>
+        <li class="active">Tiket Aktif</li>
       </ol>
     </section>
 

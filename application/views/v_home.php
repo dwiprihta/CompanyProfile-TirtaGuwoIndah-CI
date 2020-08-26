@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  
   <!-- Favicons -->
   <link href="<?php echo base_url('assets/img/a2.png');?>" rel="icon">
   <link href="<?php echo base_url('assets/img/a2.png');?>" rel="apple-touch-icon">
@@ -62,6 +61,8 @@
           <li><a href="#portfolio">Galery</a></li>
           <li><a href="#faq">Faq</a></li>
           <li><a href="#contact"> Contact</a></li>
+          <li><a data-toggle="modal" data-target="#modaltambah" class="btn btn-sm btn-warning" href="#" style="color:white;"> Pesan Tiket</a></li>
+
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -128,6 +129,8 @@
       </div>
     </section><!-- End Why Us Section -->
 
+    
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg">
       <div class="container">
@@ -166,6 +169,23 @@
 
       </div>
     </section><!-- End About Section -->
+
+    <div class="jumbotron jumbotron-fluid bg-warning">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h1 class="text-white"><b>PESAN TIKET SEKARANG</b></h1>
+            <p class="lead text-white">Beli tiketmu sekarang, jadilah member dan dapatkan diskon menarik setiap pembelian di kolam renang Tirto Guwo Indah</p>
+          </div>
+           <div class="col-lg-2" >
+           <a data-toggle="modal" data-target="#modaltambah" href="" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-danger" href="#contact" style="color:white;"> Pesan Tiket</a>
+          </div>
+           <div class="col-lg-2" >
+           <a href="<?= base_url('tiket');?>" style="width:100%; margin-top:30px; padding:20px;" class="btn btn-xl btn-primary" href="#contact" style="color:white;"> CEK Tiketmu</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="team section-bg">
@@ -355,9 +375,9 @@
         </div>
 
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
-        <?php echo $this->session->flashdata('msg');?>
+        
           <div class="col-xl-9 col-lg-12 mt-4">
-            <form action="<?php echo base_url().'kontak/kirim_pesan'?>" method="post" role="form" class="php-email-form">
+            <form action="<?php echo base_url().'kontak/kirim_pesan'?>" method="post" role="form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="nama" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Nama Anda" />
@@ -373,10 +393,9 @@
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
-              <div class="text-center"><button type="submit">Kirim Pesan</button></div>
+              <div class="text-center"> <button type="submit" name="input" id="btn-add" class="btn btn-warning text-white btn-block"><i class= 'fa fa-ticket'></i> KIRIM PESAN </button> </div>
             </form>
           </div>
-
         </div>
 
       </div>
@@ -432,17 +451,98 @@
       </div>
     </div>
 
+     <!--MODAL ADD TIKETING-->
+        <div class="modal fade" id="modaltambah" tabindex="-1" role="dialog" aria-labelledby="modalTambah" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><I class="fa fa-user"></i> BELI TIKETMU</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class='fa fa-times-circle'></i></button>
+              </div>
+              <div class="modal-body p-4">
+              <form action="<?= base_url('tiket/add');?>" method ="POST">
+                  <div class="form-group">
+                    <NO for="no_ktp">NO KTP (Nomor Induk Kependudukan)</label>
+                    <input type="text" class="form-control" required="" name="no_ktp" id="no_ktp" placeholder="NIK">
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
+                  </div>
+
+                  <div class="form-group">
+                   <label for="nama">Nama</label>
+                    <input type="text" class="form-control"  required="" name="nama" id="nama" placeholder="Nama">  
+                  </div>
+
+                  <div class="form-group"  required="">
+                    <label>Jenis Kelamin</label><br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="jenis_kemain1" name="jk" value="laki-laki" class="custom-control-input">
+                    <label class="custom-control-label" for="jenis_kemain1">LAKI-LAKI</label>
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="jenis_kemain2" name="jk" value="perempuan" class="custom-control-input">
+                    <label class="custom-control-label" for="jenis_kemain2">PEREMPUAN</label>
+                  </div> 
+                    <small class="form-text text-danger"><?= form_error('jk');?></small>
+                  </div> 
+
+                  <div class="form-group">
+                    <label for="email">email</label>
+                    <input type="email" class="form-control"  required="" name="email" id="email" placeholder="Email">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <input type="text" class="form-control"  required="" name="alamat" id="alamat" placeholder="Alamat">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="no_telpon">No Telpon</label>
+                    <input type="text" class="form-control"  required="" name="no_telpon" id="no_telpon" placeholder="No Telpon">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tgl_kunjungan">Tanggal Kunjungan</label>
+                    <input type="date" class="form-control"  required="" name="tgl_kunjungan" id="tgl_kunjungan" placeholder="">
+                    </div>
+
+                  <div class="form-group">
+                    <label for="jam_kunjungan">Jam Kunjungan</label>
+                    <input type="time" class="form-control"  required="" name="jam_kunjungan" id="jam_kunjungan" placeholder="">
+                  </div>
+
+                   <div class="form-group">
+                    <label for="jumlah">Jumlah Tiket</label>
+                    <input type="number" min="1" class="form-control"  required="" name="jumlah" id="jumlah" placeholder="" onkeyup="sum();" onchange="sum();">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tottal">Total bayar</label>
+                    <input readonly="" type="number" min="1" class="form-control"  required="" name="tottal" id="tottal" placeholder="">
+                  </div>
+                </div>
+
+                  <div class="modal-footer">
+                    <button type="submit" name="input" id="btn-add" class="btn btn-warning text-white btn-block"><i class= 'fa fa-ticket'></i> PESAN </button>  
+                  </form>
+                  </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+       <!--MODAL ADD TIKETING-->
+
     <!-- INI MODAL ARTIKERL -->
       <?php
-                foreach ($post->result_array() as $j) :
-                $post_id=$j['tulisan_id'];
-                $post_judul=$j['tulisan_judul'];
-                $post_isi=$j['tulisan_isi'];
-                $post_author=$j['tulisan_author'];
-                $post_image=$j['tulisan_gambar'];
-                $post_tglpost=$j['tanggal'];
-                $post_slug=$j['tulisan_slug'];
-              ?>
+            foreach ($post->result_array() as $j) :
+            $post_id=$j['tulisan_id'];
+            $post_judul=$j['tulisan_judul'];
+            $post_isi=$j['tulisan_isi'];
+            $post_author=$j['tulisan_author'];
+            $post_image=$j['tulisan_gambar'];
+            $post_tglpost=$j['tanggal'];
+            $post_slug=$j['tulisan_slug'];
+          ?>
       <div class="modal fade bd-example-modal-lg<?=$post_id;?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
@@ -467,6 +567,8 @@
       </div>
       <?php endforeach;?>
     <!-- INI MODAL ARTIKERL -->
+
+   
 
     <div class="container d-lg-flex py-4">
       <div class="mr-lg-auto text-center text-lg-left">
@@ -505,6 +607,57 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('assets/js/main.js')?>"></script>
+
+  <!-- PENJUMLAHAN TIKET -->
+  <script>
+function sum() {
+      var jumlah = document.getElementById('jumlah').value;
+      var harga= 10000;
+      var result = parseInt(jumlah) * parseInt(harga);
+      if (!isNaN(result)) {
+         document.getElementById('tottal').value = result;
+      }
+}
+</script>
+
+  <!-- AJAX Input -->
+  <script>
+    $(document).ready(function(){
+      
+        //SIMPAN BARANG
+        $('#btn-add').on('click',function(){
+          var no_ktp=$('#no_ktp').val();
+          var nama=$('#nama').val();
+          var jenis_kelamin1=$('#jenis_kelamin1').val();
+          var jenis_kelamin2=$('#jenis_kelamin2').val();
+          var email=$('#email').val();
+          var no_telpon=$('#no_telpon').val();
+          var alamat=$('#alamat').val();
+          var tgl_kunjungan=$('tgl_kunjungan').val();
+          var jam_kunjungan=$('#jam_kunjungan').val();
+          $.ajax({
+            type="POST",
+            url:"<?= base_url('tiket/add')?>",
+            dataType:"JSON",
+            data : {no_ktp:no_ktp, nama:nama, jenis_kelamin1:jenis_kelaimin1, 
+            jenis_kelamin2:jenis_kelaimin2, email:email, no_telpon:no-telpon,alamat:alamat, tgl_kunjungan:tgl_kunjungan, jam_kunjungan:jam_kunjungan },
+
+            success:function(convert){
+            $('[name="no_ktp"]').val("");
+            $('[name="nama"]').val("");
+            $('[name="jk]').val("");
+            $('[name="email"]').val("");
+            $('[name="no_telpon"]').val("");
+            $('[name="alamat"]').val("");
+            $('[name="tgl_kunjjungan"]').val("");
+            $('[name="jam_kunjungan"]').val("");
+            $('#modaltambah').modal('hide');
+            }
+          })   
+        });
+    });
+ 
+  </script>
 
 </body>
 </html>

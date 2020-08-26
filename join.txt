@@ -1,0 +1,1 @@
+select a.id, a.id_tiket, a.no_ktp, a.nama, a.jenis_kelamin,a.email,a.alamat,a.no_telpon,a.tgl,a.jam,a.jumlah,a.tottal,b.no_rek,b.nama_rek,b.tgl_tf,b.foto,b.status FROM tbl_tiket a LEFT JOIN tbl_pembayaran b ON a.id_tiket=b.id_tiket
