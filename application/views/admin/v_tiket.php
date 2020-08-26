@@ -149,7 +149,7 @@
                  <h1><b><center><?=$pesans['id_tiket'];?></center></b></h1><hr>
                     <NO for="no_ktp">ID Tiket</label>
                     <input type="text" readonly="" class="form-control" required="" name="no_ktp" value="<?=$pesans['id_tiket'];?>" id="no_ktp" placeholder="NIK">
-                    <small class="form-text form-danger"><?= form_error('npm');?></small> -->
+                    <small class="form-text form-danger"><?= form_error('npm');?></small>
                   </div>
 
                   <div class="form-group">
@@ -238,7 +238,7 @@
                 <div class="row" style="margin-bottom:30px; margin:4px auto;">
                    <!-- FORM SETUJU -->
                     <form action="<?= base_url('admin/tiket/update');?>" method="POST" class="mb-5">
-                    <h1><b><center><img src="<?= base_url('assets/img/bukti_tf/').$pesans['foto'];?>" alt="foto"/></center></b></h1><hr>
+                    <h1><b><center><img width="300px" src="<?= base_url('assets/img/bukti_tf/').$pesans['foto'];?>" alt="foto"/></center></b></h1><hr>
 
                     <div class="form-group">
                     <NO for="no_ktp">ID Tiket</label>
