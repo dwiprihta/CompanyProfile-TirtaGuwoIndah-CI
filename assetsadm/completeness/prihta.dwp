@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jul 2020 pada 15.42
+-- Waktu pembuatan: 26 Agu 2020 pada 05.34
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.2.27
 
@@ -99,8 +99,28 @@ CREATE TABLE `tbl_inbox` (
 --
 
 INSERT INTO `tbl_inbox` (`inbox_id`, `inbox_nama`, `inbox_email`, `inbox_kontak`, `inbox_pesan`, `inbox_tanggal`, `inbox_status`) VALUES
-(11, 'Monika dwi ramadhan', 'superdigna.cloth@gmail.com', NULL, 'ertretfr', '2020-04-05 14:08:39', 0),
-(56, 'A. Citra Sandi Purnama, ST', 'user@gmail.com', NULL, 'ai', '2020-05-31 03:34:16', 0);
+(58, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'RE432', '2020-08-23 06:42:12', 0),
+(59, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'RE432', '2020-08-23 06:42:24', 0),
+(60, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'RE432', '2020-08-23 06:42:24', 0),
+(61, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'dsd', '2020-08-23 06:48:07', 0),
+(62, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'dsd', '2020-08-23 06:48:09', 0),
+(63, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'dsd', '2020-08-23 06:48:09', 0),
+(64, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'dsd', '2020-08-23 06:48:10', 0),
+(65, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'dsd', '2020-08-23 06:48:10', 0),
+(66, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'dsd', '2020-08-23 06:48:10', 0),
+(67, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'dsd', '2020-08-23 06:48:10', 0),
+(68, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'dsd', '2020-08-23 06:48:14', 0),
+(69, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'dsd', '2020-08-23 06:48:15', 0),
+(70, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'dsd', '2020-08-23 06:48:16', 0),
+(71, 'Lodang Sutikno', '123@gmail.com', NULL, 'dssd', '2020-08-23 06:49:24', 0),
+(72, 'Monika dwi ramadhan', 'prihtapambudi@gmal.com', NULL, 'wew', '2020-08-23 06:49:47', 0),
+(73, 'ewwadsadada', 'wew@gmail.com', NULL, 'wew', '2020-08-23 07:05:10', 0),
+(74, 'ewwadsadada', 'wew@gmail.com', NULL, 'wew', '2020-08-23 07:05:11', 0),
+(75, 'ewwadsadada', 'wew@gmail.com', NULL, 'wew', '2020-08-23 07:05:12', 0),
+(76, 'ds', 'prihtapambudi@gmal.com', NULL, 'fsdf', '2020-08-23 07:05:38', 0),
+(77, 'ds', 'prihtapambudi@gmal.com', NULL, 'fsdf', '2020-08-23 07:16:52', 0),
+(78, 'ds', 'prihtapambudi@gmal.com', NULL, 'fsdf', '2020-08-23 07:17:15', 0),
+(79, 'ds', 'prihtapambudi@gmal.com', NULL, 'fsdf', '2020-08-23 07:17:21', 0);
 
 -- --------------------------------------------------------
 
@@ -159,6 +179,48 @@ CREATE TABLE `tbl_log_aktivitas` (
   `log_icon` blob DEFAULT NULL,
   `log_jenis_icon` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_pembayaran`
+--
+
+CREATE TABLE `tbl_pembayaran` (
+  `id` int(11) NOT NULL,
+  `id_tiket` varchar(15) NOT NULL,
+  `no_rek` varchar(20) NOT NULL,
+  `nama_rek` varchar(100) NOT NULL,
+  `tgl_tf` date NOT NULL,
+  `foto` varchar(100) NOT NULL,
+  `status` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_pembayaran`
+--
+
+INSERT INTO `tbl_pembayaran` (`id`, `id_tiket`, `no_rek`, `nama_rek`, `tgl_tf`, `foto`, `status`) VALUES
+(7, '1597853217', '444', 'Lodang Sutikno', '2020-09-27', 'card1.png', 3),
+(8, '1597852917', '123', 'rully ramadhan', '2020-08-21', 'bt.jpg', 2),
+(9, '1598358148', '321', 'rani', '2020-09-04', 'bt1.jpg', 2),
+(10, '1598358192', '45453', 'basamalah', '2020-08-28', 'bt2.jpg', 2),
+(11, '1598358286', '45353', 'rati', '2020-08-29', 'bt3.jpg', 2),
+(12, '1598358532', '346353', 'nining', '2020-08-29', 'bt4.jpg', 2),
+(13, '1598358580', '345353', 'andri', '2020-08-27', 'bt5.jpg', 3),
+(14, '1598358633', '123131', 'dwi martini', '2020-08-21', 'bt6.jpg', 3),
+(15, '1598358673', '12112', 'lastri', '2020-08-19', 'bt7.jpg', 3),
+(16, '283163861', '646465', 'darjatun', '2020-08-27', 'bt8.jpg', 3),
+(17, '1598358837', '3453453', 'ratri', '2020-08-10', 'bt9.jpg', 1),
+(18, '1598358873', '47645764', 'sartono', '2020-08-13', 'bt10.jpg', 1),
+(19, '1598358911', '456456464', 'darmanto', '2020-08-27', 'bt11.jpg', 1),
+(20, '1598358936', '53453543', ' ninfi', '2020-08-19', 'bt12.jpg', 1),
+(21, '1598358969', '32424324', 'bram', '2020-08-19', 'bt13.jpg', 1),
+(22, '1598359043', '54564353', 'resta', '2020-08-28', 'bt14.jpg', 0),
+(23, '1598359081', '345353543', 'didi', '2020-08-25', 'bt15.jpg', 0),
+(24, '1598359118', '5345353', 'rudi', '2020-08-11', 'bt16.jpg', 0),
+(25, '1598359277', '2342453245432', 'dani', '2020-08-28', 'bt17.jpg', 0),
+(26, '1598359320', '34534643', 'deri', '2020-08-28', 'bt18.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -1177,7 +1239,30 @@ INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung
 (963, '2020-05-17 07:29:40', '::1', 'Chrome'),
 (964, '2020-05-23 04:25:20', '::1', 'Chrome'),
 (965, '2020-05-31 02:46:52', '::1', 'Chrome'),
-(966, '2020-07-16 12:47:16', '::1', 'Chrome');
+(966, '2020-07-16 12:47:16', '::1', 'Chrome'),
+(967, '2020-07-29 15:08:52', '::1', 'Chrome'),
+(968, '2020-07-31 12:40:25', '::1', 'Chrome'),
+(969, '2020-08-01 11:42:45', '::1', 'Chrome'),
+(970, '2020-08-02 10:40:57', '::1', 'Chrome'),
+(971, '2020-08-04 17:20:45', '::1', 'Chrome'),
+(972, '2020-08-06 14:47:13', '::1', 'Chrome'),
+(973, '2020-08-07 12:18:26', '::1', 'Chrome'),
+(974, '2020-08-07 17:01:24', '::1', 'Chrome'),
+(975, '2020-08-09 11:59:02', '::1', 'Chrome'),
+(976, '2020-08-10 17:09:50', '::1', 'Chrome'),
+(977, '2020-08-12 12:59:51', '::1', 'Chrome'),
+(978, '2020-08-12 17:11:45', '::1', 'Chrome'),
+(979, '2020-08-13 17:10:44', '::1', 'Chrome'),
+(980, '2020-08-16 03:55:17', '::1', 'Chrome'),
+(981, '2020-08-17 06:51:55', '::1', 'Chrome'),
+(982, '2020-08-18 12:54:52', '::1', 'Chrome'),
+(983, '2020-08-18 18:08:46', '::1', 'Chrome'),
+(984, '2020-08-19 17:13:37', '::1', 'Chrome'),
+(985, '2020-08-21 12:57:16', '::1', 'Chrome'),
+(986, '2020-08-21 17:21:46', '::1', 'Chrome'),
+(987, '2020-08-23 03:47:34', '::1', 'Chrome'),
+(988, '2020-08-25 12:19:33', '::1', 'Chrome'),
+(989, '2020-08-26 02:07:41', '::1', 'Chrome');
 
 -- --------------------------------------------------------
 
@@ -1211,6 +1296,59 @@ INSERT INTO `tbl_portfolio` (`port_id`, `port_judul`, `port_deskripsi`, `port_ta
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tbl_tiket`
+--
+
+CREATE TABLE `tbl_tiket` (
+  `id` int(11) NOT NULL,
+  `id_tiket` varchar(50) NOT NULL,
+  `no_ktp` varchar(30) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `jenis_kelamin` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `alamat` varchar(300) NOT NULL,
+  `no_telpon` varchar(15) NOT NULL,
+  `tgl` date NOT NULL,
+  `jam` time NOT NULL,
+  `jumlah` int(9) NOT NULL,
+  `tottal` bigint(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_tiket`
+--
+
+INSERT INTO `tbl_tiket` (`id`, `id_tiket`, `no_ktp`, `nama`, `jenis_kelamin`, `email`, `alamat`, `no_telpon`, `tgl`, `jam`, `jumlah`, `tottal`) VALUES
+(1, '1597852917', '12386754544343', 'Monika alexandra', 'perempuan', 'monik@gmail.com', 'solo', '08927171', '2020-10-15', '12:22:00', 2, 20000),
+(2, '1597853217', '32187646545344', 'A. Citra Sandi Purnama, ST', 'perempuan', 'user@gmail.com', 'sukoharjo', '12121212', '2020-10-15', '11:11:00', 1, 10000),
+(18, '1598358148', '143243', 'Maman Abdurahman', 'laki-laki', 'maman@gmail.com', 'solo', '0893273733', '2020-10-15', '01:33:00', 2, 20000),
+(19, '1598358192', '438237642342', 'Martini suprapti', 'perempuan', 'tini@gmail.com', 'madegondo', '08998777823', '2020-10-15', '00:22:00', 1, 10000),
+(20, '1598358286', '29337223', 'Sutikno', 'perempuan', 'dadang@gmail.com', 'karanganyar', '027242422', '2020-10-15', '12:22:00', 4, 40000),
+(21, '1598358532', '134234343', 'badang martono', 'perempuan', 'badan@gmail.com', 'sukoharjo', '08923333222', '2020-10-15', '00:33:00', 5, 50000),
+(22, '1598358580', '12313', 'Monik', 'perempuan', 'mina@gmail.com', 'sukoharjo', '089777222333', '2020-10-15', '00:22:00', 2, 20000),
+(23, '1598358633', '0818362122', 'mimi lastri', 'perempuan', 'mimi@gmail.com', 'sragen', '089777222777', '2020-10-15', '00:22:00', 1, 10000),
+(24, '1598358673', '82723276323', 'rocane', 'laki-laki', 'ermi@gmail.com', 'niagara', '0873286323', '2020-10-15', '00:33:00', 1, 10000),
+(25, '283163861', '834328422', 'angga', 'laki-laki', 'angga@gmail.com', 'karanganyar', '08977872632', '2020-10-15', '20:52:03', 2, 20000),
+(26, '1598358837', '345464656', 'barno', 'laki-laki', 'barno@gmail.com', 'sragen', '089273633', '2020-10-15', '00:23:00', 2, 20000),
+(27, '1598358873', '899374632482', 'barmantyo', 'laki-laki', 'bram@gmail.com', 'jambangan', '089363622', '2020-10-15', '00:33:00', 2, 20000),
+(28, '1598358911', '08283272', 'rahmini', 'perempuan', 'mimin@gmail.com', 'soloro', '08932323', '2020-10-15', '00:33:00', 1, 10000),
+(29, '1598358936', '18371633', 'gagarin', 'laki-laki', 'gg@gmail.com', 'sragen', '0893273733', '2020-10-15', '00:33:00', 4, 40000),
+(30, '1598358969', '7367111', 'mindi', 'perempuan', 'mindi@gmail.com', 'solo', '08972631', '2020-10-15', '00:33:00', 1, 10000),
+(31, '1598359043', '9238428732', 'rahmini', 'perempuan', 'rahmin@gmail.com', 'sekarto', '0897263424', '2020-10-15', '00:33:00', 2, 20000),
+(32, '1598359081', '9327427222', 'saminem', 'perempuan', 'inemgoyang@gmail.com', 'boyolali', '0896969696', '2020-10-15', '12:22:00', 2, 20000),
+(33, '1598359118', '92746282', 'sarjito', 'perempuan', 'jijik@gmail.com', 'magetan', '0876789762', '2020-10-15', '00:33:00', 2, 20000),
+(34, '1598359277', '84763832', 'hamdani', 'laki-laki', 'hamdan@gmail.com', 'surabaya', '0897626322', '2020-10-15', '00:33:00', 1, 10000),
+(35, '1598359320', '9387832473', 'ahmad sheh', 'laki-laki', 'sheh@gmail.com', 'baron', '080727273232', '2020-10-15', '00:44:00', 4, 40000),
+(36, '1598359361', '93753833', 'samaludin', 'laki-laki', 'samal@gmail.com', 'mantingan', '0897336223', '2020-10-15', '00:33:00', 1, 10000),
+(37, '1598359391', '09826322', 'dandi', 'laki-laki', 'ddn@gmail.com', 'surabaya', '08998777823', '2020-10-15', '00:32:00', 6, 60000),
+(38, '1598359420', '827342842', 'dinda', 'perempuan', 'dinda@gmail.com', 'jaten', '0893764632', '2020-10-15', '00:33:00', 2, 20000),
+(39, '1598359456', '748263272', 'listyo', 'laki-laki', 'lissss@gmail.com', 'simo', '08976334232', '2020-10-15', '00:33:00', 5, 50000),
+(40, '1598359532', '0823842742', 'baban', 'perempuan', 'bban@gmail.com', 'solore', '0827328732', '2020-08-12', '00:33:00', 2, 20000),
+(41, '1598359562', '9081761617361', 'bambang', 'laki-laki', 'bambang@gmail.com', 'solobaru', '343242', '2020-08-28', '00:23:00', 4, 40000);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tbl_tulisan`
 --
 
@@ -1239,6 +1377,65 @@ INSERT INTO `tbl_tulisan` (`tulisan_id`, `tulisan_judul`, `tulisan_isi`, `tulisa
 (30, '4 Wista Air di Kabupaten Karanganyar', '<p>&nbsp;</p>\r\n\r\n<p><strong>1.</strong><strong>Edupark Intan Pari Karanganyar</strong></p>\r\n\r\n<p>Sebagai tempat wisata, Kolam Renang Intanpari merupakan kolam renang dengan standar nasional dan tersedia dua kolam renang, yang berada di depan pintu masuk merupakan kolam yang diperuntukkan bagi anak-anak dengan kedalaman 50cm dan di sebelah selatannya merupakan kolam renang yang disediakan bagi pengunjung yang sudah bisa berenang dengan kedalaman sekitar 130cm 215cm. Bagi pengunjung yang belum bisa berenang, telah siap beberapa pelatih resmi yang melayani kursus renang &nbsp;baik pria maupun wanita termasuk anak-anak yang biasanya dilaksanakan pada pagi dan sore hari dengan biaya yang terjangkau.</p>\r\n\r\n<p><strong>2.TIRTA GUWO INDAH</strong></p>\r\n\r\n<p>Bagi anda yang senang bermain air atau&nbsp;berenang mungkin bisa mencoba tempat yang satu ini, dengan lokasi yang berada di tengah kampung di kawasan hutan karet sehingga memiliki suasana yang berbeda dari kebanyakan waterboom. Tempat ini bisa menjadi alternatif tujuan wisata keluarga khususnya di sekitaran wilayah karanganyar bagian timur laut yang berbatasan langsung dengan kabupaten sragen.&nbsp;<em>Waterboom Tirta Guwo Indah</em>&nbsp;namanya, beralamat di Kampung Guworejo, Desa Sumberejo, Kecamatan Kerjo, Kabupaten Karanganyar, Jawa Tengah.</p>\r\n\r\n<p><strong>3.AGROWISATA SONDOKORO KARANGANYAR</strong></p>\r\n\r\n<p>Agrowisata ini berada di Kec. Tasikmadu Kag. Karanganyar Jawa Tengah. Untuk lebih jelasnya alamat Sondokoro karanganyar adalah Jalan Mangkunegara, Bojonegara, Surakarta, Jawa Tengah 42454, Indonesia. Tempat wisata ini tidak jauh dari Kota solo, mungkin hanya membutuhkan waktu 45 menit untuk sampai kesana. Jadi setelah berwisata dari kota solo menikmati seni dan budayanya sekarang kalian bisa melanjutkan ke Agrowisata Sondokoro.. Dari sejarahnya tempat wisata sondokoro ini dulunya adalah sebuah pabrik gula tebu. Nah kalian disini juga akan di suguhi dengan wisata sejarah Pabrik Gula yang terbesar yang ada di Karanganyar, dan sampai saat ini pabrik gula tersebut masih memproduksi gula saat panen raya tebu telah tiba</p>\r\n\r\n<p>Selain itu kalian juga bisa berenang di sondokoro yang di sediakan kolam renang untuk anak-anak maupun orang dewasa</p>\r\n\r\n<p><strong>4.WATUJODO KARANGANYAR (mateseh)</strong></p>\r\n\r\n<p>Watu Jodo terletak di Jl. Raya Matesih &ndash; Tawangmangu Kecamatan Matesih, Kabupaten Karanganyar tepatnya berada di depan Sekolah SMP Matesih.<br />\r\nWatu Jodo berasal dari kata bahasa Jawa, yakni watu yang berarti batu dan Jodo yang berarti jodoh. Jika digabungkan kata watu Jodo mempunyai arti batu yang berjodoh. Menurut cerita yang beredar, sejarah Watu Jodo berasal dari dua buah batu yang tidak bisa dipindahkan ataupun dipisahkan, kedua batu itu seperti batu yang berjodoh tidak akan terpisahkan sehingga dinamakan Watu Jodo.</p>\r\n\r\n<p>Watu Jodo menyediakan banyak fasilitas yang menarik di antaranya adalah resto tempat makan yang meyediakan berbagai macam menu makan pilihan, Kolam Tempat Pemancingan ikan yang cukup luas, Area mainan mobil-mobilan anak, Gazebo makan yang teduh, Kolam renang, Kolam Perahu Bebek, Penjualan Tanaman Buah, Musholla, Kamar Mandi, Tempat parkir yang luas.</p>\r\n', '2017-08-07 02:46:11', 12, 'Blog', 13, '0cc5c7e6409572541ac953c1b246651a.jpg', 1, 'Administrator', 0, '4-wista-air-di-kabupaten-karanganyar.html', 1),
 (31, 'Memulai Binis Travel, Apa Yang Diperlukan ?', '<p>Bisnis travel adalah sebuah usaha yang berfokus pada membantu seseorang atau suatu pihak dalam perjalanan. Dalam lingkup luas, ada banyak sekali jenis bisnis travel yang dapat dijadikan sebagai pilihan. Tahapannya mulai dari menawarkan jasa pencarian tiket dan akomodasi murah, hingga open trip tour and travel. Bisnis tersebut juga memberikan layanan berupa pemandu wisata untuk para pelancong.</p>\r\n\r\n<p>Secara umum, bisnis travel ini melingkupi seluruh sektor wisata. Jadi, Anda memberikan kemudahan kepada publik untuk merencakan perjalanan yang diinginkan. Targetnya, untuk kawasan domestik, hingga internasional, tergantung pada penerapan jenis layanan yang akan diaplikasikan. Yang paling marak saat ini adalah open trip ke luar negeri. Jenis ini memang sangat diminati oleh banyak orang.</p>\r\n\r\n<p>Dengan kata lain, Anda dapat menjual paket all in one. Paket tersebut mlai dari tiket pesawat, akomodasi hotel, transportasi dan makan selama perjalanan, guide, dan lain sebagainya. Apalagi, saat ini ada banyak sekali promo tiket pesawat murah yang dapat dijadikan sebagai alternatif solusi, aehingga trip lebih terjangkau bagi konsumen. Tentunya tetap menguntungkan pelaku bisnis tour and travel.</p>\r\n\r\n<h2><strong>Peluang Bisnis Travel</strong></h2>\r\n\r\n<p><img alt=\"Bisnis Tour and Travel\" src=\"https://qwords.com/blog/wp-content/uploads/2019/11/Bisnis-Tour-and-Travel.png\" style=\"height:304px; width:724px\" /></p>\r\n\r\n<p>Bisnis Tour and Travel</p>\r\n\r\n<p>Dewasa ini, kegiatan bepergian dan jalan-jalan mengunjungi objek wisata tertentu memang sangat marak. Apalagi, saat ini banyak maskapai yang mulai melebarkan sayapnya dengan membuka rute ke daerah dengan destinasi tertentu. Kemudahan dan kecepatan transportasi tersebut tentunya membuat minat banyak orang akan jalan-jalan menjadi semakin meningkat.</p>\r\n\r\n<p>Hal tersebut pula yang kemudian menginspirasi beberapa pihak untuk mencoba terjun ke bisnis travel agen. Bisnis tersebut juga dikenal sebagai biro wisata. Tidak dapat dipungkiri jika menggunakan travel agent ini dapat membuat perencanaan perjalanan menjadi mudah dan praktis. Customer tidak perlu lagi bingung dan menghabiskan banyak waktu untuk mencari promo dan tiket murah.</p>\r\n\r\n<p>Dengan menghubungi travel agen terpercaya, maka Anda akan mendapatkan informasi dan notifikasi otomatis mengenai apa saja yang dibutuhkan. Tidak mengherankan kalau kemudian banyak pihak yang memercayakan trip-nya pada suatu agen. Hal yang menjadi poin adalah kenapa bisnis travel memiliki peluang sangat menjanjikan, salah satunya adalah karena jangkauan pasarnya luas.</p>\r\n\r\n<p>Selain itu, perkembangan teknologi dan informasi juga bisa dimanfaatkan oleh pelaku bisnis untuk menjaring customer. Contohnya saja dengan melakukan promosi melalui internet, baik memanfaatkan media sosial, dan lain sebagainya. Supaya kelihatan lebih profesional dan dipercaya oleh calon customer, maka pemilik travel agen sudah seharusnya memiliki sebuah website official.</p>\r\n\r\n<h2><strong>Cara Memulai Bisnis Travel Wisata</strong></h2>\r\n\r\n<p>Untuk memulai bisnis travel wisata sebenarnya tidak begitu sulit. Disini, modal bukan suatu hal utama yang harus dijadikan sebagai titik perhatian. Di zaman modern sekarang ini, promosi online bisa dikatakan jauh lebih efektif dan efisien dibandingkan dengan promosi offline. Dengan kata lain, Anda bisa mulai dengan menjadi sebuah agen perjalanan dengan sistem berbasis online.</p>\r\n\r\n<p>Begitu pula ada beberapa hal yang perlu diperhatikan dan dijadikan pertimbangan sebelum memulai bisnis ini. Apabila Anda tertarik untuk mencoba peruntungan menjadi seorang agen perjalanan, di bawah ini adalah beberapa hal yang harus dipikirkan dengan matang:</p>\r\n\r\n<h3>1. Memilih jenis bisnis travel</h3>\r\n\r\n<p><img alt=\"Rental Mobil Wisata\" src=\"https://qwords.com/blog/wp-content/uploads/2019/11/Rental-Mobil-Wisata.png\" style=\"height:377px; width:745px\" /></p>\r\n\r\n<p>Rental Mobil Wisata</p>\r\n\r\n<p>Sebagaimana sudah dibahas sebelumnya, bisnis ini memiliki cakupan cukup luas. Sebelum memutuskan untuk terjun ke usaha travel, pastikan Anda sudah memilih bidang atau jenis yang diinginkan. Pastikan juga usaha ini sesuai passion supaya lebih mudah. Misalnya saja ketika memilih jasa penyediaan tiket murah, usahakan tetap fokus pada satu hal tersebut.</p>\r\n\r\n<h3>2. Menentukan nama bisnis</h3>\r\n\r\n<p>Selanjutnya, tentunya nama untuk bisnis yang akan digunakan. Meskipun kelihatan sangat sepele, namun jangan mengabaikan pemilihan nama. Alasannya, ini akan menjadi bagian penting dalam branding. Oleh sebab itu, usahakan mengambil nama yang unik, namun mudah diucapkan, dan mudah diingat. Ini dapat membantu pemasaran bisnis nantinya.</p>\r\n\r\n<h3>3. Memetakan lokasi wisata</h3>\r\n\r\n<p><img alt=\"Kuta Bali\" src=\"https://qwords.com/blog/wp-content/uploads/2019/11/Kuta-Bali.png\" style=\"height:439px; width:669px\" /></p>\r\n\r\n<p>Kuta Bali</p>\r\n\r\n<p>Saat membuat perencanaan bisnis travel wisata, Anda juga harus jeli dalam membuat pemetaan lokasi. Contohnya, tempat yang akan dipromosikan menjadi tujuan dari destinasi utama. Pastikan kalau daerah tersebut memang potensial dan juga memiliki long future. Bukan hanya tempat yang viral musiman. Jika musiman, lokasi berdampak buruk bagi travel Anda.</p>\r\n\r\n<h3>4. Menawarkan paket menarik</h3>\r\n\r\n<p>Yang tidak kalah penting adalah penawaran paket wisata. Supaya lebih menarik, maka pastikan Anda sudah menyusun beberapa paket sekaligus. Calon customer pun juga memiliki lebih banyak pilihan. Selain menawarkan destinasi unik, menarik, dan kekinian, cobalah melakukan riset harga pasar, kemudian aplikasikan harga paling rendah.</p>\r\n\r\n<h3>5. Membuat marketing plan</h3>\r\n\r\n<p>Apabila Anda berniat untuk memulai bisnis travel online, Anda Dapat memanfaatkan digital marketing. Tujuannya, untuk memasarkan produk jasa dan layanan travel agen Anda. Anda bisa menggunakan fitur Google Ads, Facebook Ads, Instagram Ads, dan sebagainya. Selain jangkauan pasarnya luas, promosi online juga lebih mudah, dan hemat biaya.</p>\r\n\r\n<h3>6. Membangun sistem bisnis online</h3>\r\n\r\n<p><img alt=\"Cara Kerja Digital Marketing\" src=\"https://qwords.com/blog/wp-content/uploads/2019/10/Cara-Kerja-Digital-Marketing.jpg\" style=\"height:853px; width:1280px\" /></p>\r\n\r\n<p>Cara Kerja Digital Marketing</p>\r\n\r\n<p>Untuk memulai bisnis travel Indonesia yang lebih efisien dan mudah di akses. Di zaman modern ini, Anda juga harus membangun sebuah sistem bisnis dengan basis online. Hal tersebut demi kenyamanan para calon customer. Supaya lebih mudah dalam mendapatkan informasi paling update yang dibutuhkan. Bisnis pun bisa dilakukan melalui gadget.</p>\r\n\r\n<h3>7. Penawaran pelayanan terbaik</h3>\r\n\r\n<p>Selain menawarkan harga miring, diskon, atau cashback untuk menarik perhatian calon customer, Anda juga harus memastikan kalau layanan yang ditawarkan juga tidak mengecewakan. Salah satunya bisa diterapkan dengan cara memberikan bonus dokumentasi foto personal maupun grup kualitas terbaik. Tujuannya, agar customer merasa senang.</p>\r\n\r\n<h3>8. Membangun jaringan</h3>\r\n\r\n<p>Tidak peduli apakah bisnis travel agent Anda berbasis online atau offline, membangun jaringan sangat penting dilakukan sejak dini. Selain melakukan kerjasama dengan berbagai pihak, seperti pemilik restaurant, tour guide lokal, dan lainnya. Anda juga bisa mulai menawarkan kepada teman-teman supaya menjadi reseller dengan sistem bagi hasil.</p>\r\n\r\n<h3>9. Mendaftarkan merk bisnis</h3>\r\n\r\n<p>Mendaftarkan merk (nama) untuk bisnis tour dan travel merupakan suatu hal penting. Karena percuma Anda mati-matian branding nama, kalau ternyata tidak terdaftar di HKI atau Hak Kekayaan Intelektual. Anda tidak bisa menuntut apabila ada pihak yang juga menggunakan nama tersebut di kemudian hari. Jadi, trademark itu penting sekali.</p>\r\n', '2017-08-07 02:51:02', 9, 'Tips & Trik', 11, '393bf5af2e38e5402067cc0820f01d93.jpg', 1, 'Administrator', 0, 'memulai-binis-travel,-apa-yang-diperlukan-.html', 3),
 (33, 'TripAdvisor merilis 10 water park terbaik di dunia', '<p>Baru-baru ini, TripAdvisor merilis 10 water park terbaik di dunia. Yang mengagumkan dan membanggakan adalah ketika Indonesia menjadi bagian dari pengumuman ini. Berikut ini merupakan water park dunia mendapatkan predikat water park terbaik di dunia.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h2>1. Siam Park, Spanyol</h2>\r\n\r\n<p><a href=\"http://phinemo.com/wp-content/uploads/2016/07/high.jpg\"><img alt=\"\" src=\"data:image/svg+xml;charset=utf-8,&lt;svg height=&quot;333px&quot; width=&quot;640px&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;/&gt;\" /><img alt=\"water park terbaik di dunia\" src=\"http://phinemo.com/wp-content/uploads/2016/07/high.jpg\" /></a></p>\r\n\r\n<p>Foto dari official website&nbsp;Siam Park Spanyol</p>\r\n\r\n<p>Mungkin bagi kamu, mendengar nama Siam, akan serasa di ingatkan dengan negara Thailand padahal Water Park ini berada di Spanyol.</p>\r\n\r\n<p>Seperti namanya, water park ini memang memiliki tema &lsquo;negara gajah putih&rsquo;. Banyak sekali ornamen-ornamen khas negara Thailand yang ditata ciamik dengan berbagai fasilitas berkelas Internasional. Tidak salah, jika&nbsp;TripAdvisor merilis Siam Park sebagai water park terbaik di dunia.</p>\r\n\r\n<h2>2. Waterbom Bali, Indonesia</h2>\r\n\r\n<p><a href=\"http://phinemo.com/wp-content/uploads/2016/07/bali.jpg\"><img alt=\"\" src=\"data:image/svg+xml;charset=utf-8,&lt;svg height=&quot;427px&quot; width=&quot;640px&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;/&gt;\" /><img alt=\"water park terbaik di dunia\" src=\"http://phinemo.com/wp-content/uploads/2016/07/bali.jpg\" /></a></p>\r\n\r\n<p>Foto dari official Waterbom Bali</p>\r\n\r\n<p>Di urutan ke dua, Indonesia tampil unggul dengan mempersembahkan Waterbom Bali sebagai water park terbaik di dunia. Luas area yang mencapai 3,8 hektar dengan berbagai fasilitas kelas Internasional ini di sebuat sebagai alasan kuat mengapa water park ini menjadi water park terbaik di dunia.</p>\r\n\r\n<p>Waterbom Bali menggunakan air klorinasi garam yang diolah dengan teknik sanitasi canggih sehingga aman di kulit. Selain itu, Waterbom Bali juga&nbsp;berkomitmen menjalankan perusahaan bervisi lingkungan dengan memodifikasi 68% lahan sebagai taman, lalu penggunaan LED hemat energi, serta pendaur ulangan 3.600 meter kubik setiap harinya.</p>\r\n\r\n<p>Waw! Keren banget, kan? Harusnya, Waterbom Bali menempati urutan pertama, ya!</p>\r\n\r\n<h2>3. Aquaventure Waterpark, Uni Emirat Arab</h2>\r\n\r\n<p><a href=\"http://phinemo.com/wp-content/uploads/2016/07/Aquaventure-Waterpark.jpg\"><img alt=\"\" src=\"data:image/svg+xml;charset=utf-8,&lt;svg height=&quot;331px&quot; width=&quot;640px&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;/&gt;\" /><img alt=\"water park terbaik di dunia\" src=\"http://phinemo.com/wp-content/uploads/2016/07/Aquaventure-Waterpark.jpg\" /></a></p>\r\n\r\n<p>Foto dari&nbsp;<a href=\"http://albalad.co/\">sini</a></p>\r\n\r\n<p>quaventure di Kota Dubai, Uni Emirat Arab, terpilih sebagai taman bermain air terbaik di Timur Tengah dan kelima terbaik di dunia, menurut TripAdvisor Travellers&rsquo; Choice Waterparks Awards.</p>\r\n\r\n<p>Taman bermain air berlokasi di Hotel Atlantis ini memiliki perosotan berdiamter terbesar sejagat. Aquaventure itu seluas 17 hektare.</p>\r\n\r\n<p>Scott Deisley, Wakil Presiden Operasi Aquaventure, berterima kasih kepada tiap orang telah berbagi pengalamannya berkunjung ke taman bermain air itu. &ldquo;Kami benar-benar senang dengan pemeringkatan oleh Trip Advisor mendorong Aquaventure ke posisi global, terutama penilaian itu datang dari ribuan pengunjung telah datang ke sana,&rdquo; katanya.</p>\r\n\r\n<h2>4. Disney&rsquo;s Typhoon Lagoon Water Park, AS</h2>\r\n\r\n<p><a href=\"http://phinemo.com/wp-content/uploads/2016/07/as.jpg\"><img alt=\"\" src=\"data:image/svg+xml;charset=utf-8,&lt;svg height=&quot;429px&quot; width=&quot;640px&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;/&gt;\" /><img alt=\"water park terbaik di dunia\" src=\"http://phinemo.com/wp-content/uploads/2016/07/as.jpg\" /></a></p>\r\n\r\n<p>Foto dari&nbsp;<a href=\"https://www.google.co.id/search?q=Disney%27s+Typhoon+Lagoon+Water+Park,+AS&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwifmeT9gO3NAhWLL48KHYLwBW8Q_AUICSgC&amp;biw=1280&amp;bih=655#tbm=isch&amp;tbs=rimg%3ACabARAtKAEZHIjh2Fl9gMO0yINEbVC-nolkjOlmPY50VPBkF6BxYucf_1noj0LXWnG0IdOWi3QZuQyXAzGvr-WUcy8CoSCXYWX2Aw7TIgEc6kZmMfs5M4KhIJ0RtUL6eiWSMRqVUSci6M2SwqEgk6WY9jnRU8GRGpVRJyLozZLCoSCQXoHFi5x_1-eEalVEnIujNksKhIJiPQtdacbQh0R-kzRG0OaRtoqEgk5aLdBm5DJcBHqmSlR3-LiWioSCTMa-v5ZRzLwEa_1LAtij0xcr&amp;q=Disney%27s%20Typhoon%20Lagoon%20Water%20Park%2C%20AS&amp;imgrc=OWi3QZuQyXDdyM%3A\">sini</a></p>\r\n\r\n<p>Melihat sekilas bangunan mirip kapal dan batu-batuan &nbsp;yang di usung oleh wahana air berombak terbesar di dunia ini, pasti akan mengingatkan kamu dengan kisah bajak laut.</p>\r\n\r\n<h2>5. Beach Park, Brasil</h2>\r\n\r\n<p><a href=\"http://phinemo.com/wp-content/uploads/2016/07/jujju.jpg\"><img alt=\"\" src=\"data:image/svg+xml;charset=utf-8,&lt;svg height=&quot;410px&quot; width=&quot;640px&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;/&gt;\" /><img alt=\"water park terbaik di dunia\" src=\"http://phinemo.com/wp-content/uploads/2016/07/jujju.jpg\" /></a></p>\r\n\r\n<p>Foto dari&nbsp;<a href=\"http://www.pinterest.com/\">sini</a></p>\r\n\r\n<p>Jika kamu perhatikan dengan seksama, wahana air ini pasti mirip dengan lokasi syuting film O Novico Rebelde, yap! Film adaptasi The Sound Music ini memang menjadikan Beach Park sebagai latarnya.&nbsp; Kompleks Beach Park-nya terdiri atas Pantai, Taman dan Resor Akuatik. Taman air ini merupakan atraksi wisata terkemuka di Brasil, sekaligus merupakan taman air terluas di Amerika Latin.</p>\r\n\r\n<h2>Baca juga:</h2>\r\n\r\n<ul>\r\n	<li><a href=\"http://phinemo.com/indonesia-raih-penghargaan-best-diving-destination-di-taiwan/\">Indonesia Raih Penghargaan Destinasi Selam Terbaik di Diving &nbsp;Resort Expo Taiwan</a></li>\r\n	<li><a href=\"http://phinemo.com/9-festival-jazz-di-indonesia-yang-berlokasi-di-tengah-alam/\">9 Festival Jazz di Indonesia yang Berlokasi di Tengah Alam</a></li>\r\n	<li><a href=\"http://phinemo.com/taman-nasional-di-indonesia-yang-terkenal-di-dunia-internasional/\">8 Cagar Biosfer Indonesia yang Diakui Dunia Internasional</a></li>\r\n</ul>\r\n\r\n<h2>6. Wild Wadi Water Park, Uni Emirat Arab</h2>\r\n\r\n<p><a href=\"http://phinemo.com/wp-content/uploads/2016/07/wild-widi.jpg\"><img alt=\"\" src=\"data:image/svg+xml;charset=utf-8,&lt;svg height=&quot;284px&quot; width=&quot;640px&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;/&gt;\" /><img alt=\"wild-widi\" src=\"http://phinemo.com/wp-content/uploads/2016/07/wild-widi.jpg\" /></a></p>\r\n\r\n<p>Foto dari official website Wild Wadi Water Park</p>\r\n\r\n<p>Ketika berada di Wild Wadi Water Park, pemandangan hebat akan tersaji tanpa batas. Letaknya yang berada di dekat Pantai Jumeirah membuat bangunan terkenal terpampang nyata. Terkenal dengan berbagai fasilitas mewah dan mahal, tidak heran jika Uni Emirat Arab selalu menjadi salah satu pelopor tempat wisata top di dunia.</p>\r\n\r\n<p>Ad</p>\r\n\r\n<h2>7. Disney&rsquo;s Blizzard Beach Water Park, AS</h2>\r\n\r\n<p><a href=\"http://phinemo.com/wp-content/uploads/2016/07/jos.jpg\"><img alt=\"\" src=\"data:image/svg+xml;charset=utf-8,&lt;svg height=&quot;395px&quot; width=&quot;640px&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;/&gt;\" /><img alt=\"water park terbaik di dunia\" src=\"http://phinemo.com/wp-content/uploads/2016/07/jos.jpg\" /></a></p>\r\n\r\n<p>Foto dari&nbsp;<a href=\"http://rooang.com/2015/03/5-water-park-terbaik-di-dunia/4/\">sini</a></p>\r\n\r\n<p>Konon, water park ini sudah beroprasi sejak 1995, dan menjadi taman air ke tiga Walt Disney World. Waw.. lumayan tua untuk ukuran umur seseorang, tapi meskipun sudah lama dibangun, wahanan ini masih sangat keren.</p>\r\n\r\n<p>Atraksi di wahana air inii berada di Mount Gushmore, bukit buatan dengan ketingian 27,4 meter. Menariknya, bukit ini dibuat menjadi 3 lereng&nbsp;dengan warna yang berbeda, yaitu&nbsp;hijau, merah, dan ungu. Lucu banget, ya!</p>\r\n\r\n<h2>8. Aquaventure Water Park Di Atlantis Paradise Island, New Providence Island</h2>\r\n\r\n<p><a href=\"http://phinemo.com/wp-content/uploads/2016/07/Aerial-AQUAVENTUREMayan-Temple.jpg\"><img alt=\"\" src=\"data:image/svg+xml;charset=utf-8,&lt;svg height=&quot;427px&quot; width=&quot;640px&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;/&gt;\" /><img alt=\"water park terbaik di dunia\" src=\"http://phinemo.com/wp-content/uploads/2016/07/Aerial-AQUAVENTUREMayan-Temple.jpg\" /></a></p>\r\n\r\n<p>Foto dari&nbsp;<a href=\"http://gocaribbean.about.com640/\">sini</a></p>\r\n\r\n<p>Water park yang menempati sebuah pulau ini gosipnya menjadi wahana air termegah di dunia juga, lho! Dilihat sekilas, tema bangunan ini mirip jaman dulu banget ya.. Tapi, jangan salah, kamu harus bayar mahal untuk bisa menikmati wahana di water park ini.</p>\r\n\r\n<p>Ad</p>\r\n\r\n<p>Ingin mencobanya? Mending mampir ke Waterbom Bali dulu, deh!</p>\r\n\r\n<h2>9. Yas Waterworld Abu Dhabi, Uni Emirat Arab</h2>\r\n\r\n<p><a href=\"http://phinemo.com/wp-content/uploads/2016/07/1.jpg\"><img alt=\"\" src=\"data:image/svg+xml;charset=utf-8,&lt;svg height=&quot;426px&quot; width=&quot;640px&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;/&gt;\" /><img alt=\"water park terbaik di dunia\" src=\"http://phinemo.com/wp-content/uploads/2016/07/1.jpg\" /></a></p>\r\n\r\n<p>Foto dari sini</p>\r\n\r\n<p>Wahana air di Uni Emirat Arab ternyata kembali menyabet gelar sebagai wahana air terbaik di dunia di urutan ke sembilan. Wah, benar-benar bikin iri yah! tapi, kamu tenang saja, Indonesia masih unggul dari mereka kok!</p>\r\n\r\n<p>Kata si TripAdvisor, si Yas Waterwold ini punya tema&nbsp;&lsquo;Arabian fantasy&rsquo;. Gosipnya, bangunan water park ini dibangun dengan dana mencapai 245 juta dollar amerika dan memiliki dua water coaster, sepasang mesin ombak buatan, waterboom, roller coaster air, dan game interaktif SplashQuest.</p>\r\n\r\n<h2>10. Hot Park, Brasil</h2>\r\n\r\n<p><a href=\"http://phinemo.com/wp-content/uploads/2016/07/hot-park.jpg\"><img alt=\"\" src=\"data:image/svg+xml;charset=utf-8,&lt;svg height=&quot;366px&quot; width=&quot;640px&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;/&gt;\" /><img alt=\"water park terbak di dunia\" src=\"http://phinemo.com/wp-content/uploads/2016/07/hot-park.jpg\" /></a></p>\r\n\r\n<p>Water park terbesar di Brasil ini memiliki aktivitas yang cukup sibuk dengan banyak pengunjung yang ingin merasakan water park dengan suhu air yang berbeda di kebanyakan&nbsp;water park di dunia. Fasilitas yang super keren membuat water park ini layak menempati posisi ke sepuluh.</p>\r\n\r\n<p>***</p>\r\n\r\n<p>Wah, keren banget ya wahana air dunia, Indonesia juga ternyata tak kalah dengan negara-negara lain. Kamu pasti bangga dengan negara yang Tuhan ciptakan dengan sejuta keindahannya.</p>\r\n', '2020-04-05 13:21:34', 12, 'Blog', 0, '9d0895cfa17cf4a487fb72818273da32.jpg', 1, 'Administrator', 0, 'tripadvisor-merilis-10-water-park-terbaik-di-dunia.html', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `no_telpon` varchar(15) NOT NULL,
+  `tgl_daftar` date NOT NULL,
+  `foto` varchar(200) NOT NULL,
+  `id_role` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id`, `nama`, `email`, `password`, `no_telpon`, `tgl_daftar`, `foto`, `id_role`) VALUES
+(1, 'roni sogol', 'sogol@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '089999000222', '2020-08-19', 'default.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `v_pembayaran`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `v_pembayaran` (
+`id` int(11)
+,`id_tiket` varchar(50)
+,`no_ktp` varchar(30)
+,`nama` varchar(100)
+,`jenis_kelamin` varchar(20)
+,`email` varchar(100)
+,`alamat` varchar(300)
+,`no_telpon` varchar(15)
+,`tgl` date
+,`jam` time
+,`jumlah` int(9)
+,`tottal` bigint(12)
+,`no_rek` varchar(20)
+,`nama_rek` varchar(100)
+,`tgl_tf` date
+,`foto` varchar(100)
+,`status` int(2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `v_pembayaran`
+--
+DROP TABLE IF EXISTS `v_pembayaran`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_pembayaran`  AS  select `a`.`id` AS `id`,`a`.`id_tiket` AS `id_tiket`,`a`.`no_ktp` AS `no_ktp`,`a`.`nama` AS `nama`,`a`.`jenis_kelamin` AS `jenis_kelamin`,`a`.`email` AS `email`,`a`.`alamat` AS `alamat`,`a`.`no_telpon` AS `no_telpon`,`a`.`tgl` AS `tgl`,`a`.`jam` AS `jam`,`a`.`jumlah` AS `jumlah`,`a`.`tottal` AS `tottal`,`b`.`no_rek` AS `no_rek`,`b`.`nama_rek` AS `nama_rek`,`b`.`tgl_tf` AS `tgl_tf`,`b`.`foto` AS `foto`,`b`.`status` AS `status` from (`tbl_tiket` `a` left join `tbl_pembayaran` `b` on(`a`.`id_tiket` = `b`.`id_tiket`)) ;
 
 --
 -- Indexes for dumped tables
@@ -1286,6 +1483,12 @@ ALTER TABLE `tbl_log_aktivitas`
   ADD KEY `log_pengguna_id` (`log_pengguna_id`);
 
 --
+-- Indeks untuk tabel `tbl_pembayaran`
+--
+ALTER TABLE `tbl_pembayaran`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
@@ -1304,12 +1507,24 @@ ALTER TABLE `tbl_portfolio`
   ADD PRIMARY KEY (`port_id`);
 
 --
+-- Indeks untuk tabel `tbl_tiket`
+--
+ALTER TABLE `tbl_tiket`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `tbl_tulisan`
 --
 ALTER TABLE `tbl_tulisan`
   ADD PRIMARY KEY (`tulisan_id`),
   ADD KEY `tulisan_kategori_id` (`tulisan_kategori_id`),
   ADD KEY `tulisan_pengguna_id` (`tulisan_pengguna_id`);
+
+--
+-- Indeks untuk tabel `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -1319,7 +1534,7 @@ ALTER TABLE `tbl_tulisan`
 -- AUTO_INCREMENT untuk tabel `tbl_album`
 --
 ALTER TABLE `tbl_album`
-  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_galeri`
@@ -1331,7 +1546,7 @@ ALTER TABLE `tbl_galeri`
 -- AUTO_INCREMENT untuk tabel `tbl_inbox`
 --
 ALTER TABLE `tbl_inbox`
-  MODIFY `inbox_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `inbox_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_kategori`
@@ -1352,6 +1567,12 @@ ALTER TABLE `tbl_log_aktivitas`
   MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `tbl_pembayaran`
+--
+ALTER TABLE `tbl_pembayaran`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
 -- AUTO_INCREMENT untuk tabel `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
@@ -1361,7 +1582,7 @@ ALTER TABLE `tbl_pengguna`
 -- AUTO_INCREMENT untuk tabel `tbl_pengunjung`
 --
 ALTER TABLE `tbl_pengunjung`
-  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=967;
+  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=990;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_portfolio`
@@ -1370,10 +1591,22 @@ ALTER TABLE `tbl_portfolio`
   MODIFY `port_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT untuk tabel `tbl_tiket`
+--
+ALTER TABLE `tbl_tiket`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
 -- AUTO_INCREMENT untuk tabel `tbl_tulisan`
 --
 ALTER TABLE `tbl_tulisan`
   MODIFY `tulisan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
