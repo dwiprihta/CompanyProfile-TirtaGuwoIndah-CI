@@ -5,8 +5,8 @@ class M_tiket extends CI_Model{
 	public function show($keyword){
 		$this->db->select('*');
 		$this->db->from('v_pembayaran');
-		$this->db->like('id_tiket',$keyword);
-		$this->db->or_like('no_ktp',$keyword);
+		// $this->db->like('id_tiket',$keyword);
+		// $this->db->or_like('no_ktp',$keyword);
 		$this->db->or_like('email',$keyword);
 		$this->db->or_like('no_telpon',$keyword);
 		return $this->db->get()->result_array();

@@ -461,11 +461,11 @@
               </div>
               <div class="modal-body p-4">
               <form action="<?= base_url('tiket/add');?>" method ="POST">
-                  <div class="form-group">
-                    <NO for="no_ktp">NO KTP (Nomor Induk Kependudukan)</label>
-                    <input type="text" class="form-control" required="" name="no_ktp" id="no_ktp" placeholder="NIK">
-                    <small class="form-text form-danger"><?= form_error('npm');?></small>
-                  </div>
+                  <!-- <div class="form-group">
+                    <NO for="no_ktp">NO KTP (Nomor Induk Kependudukan)</label> -->
+                    <input type="hidden" class="form-control" required="" value="001" name="no_ktp" id="no_ktp" placeholder="NIK">
+                    <!-- <small class="form-text form-danger"><?= form_error('npm');?></small>
+                  </div> -->
 
                   <div class="form-group">
                    <label for="nama">Nama</label>

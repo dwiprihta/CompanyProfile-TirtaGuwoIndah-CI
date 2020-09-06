@@ -98,9 +98,9 @@
                         if($pesans['status']==NULL):?>
                           <a href="#" class="btn btn-sm btn-info">Belum dibayar</a>
                         <?php elseif($pesans['status']==0):?>
-                           <a data-toggle="modal" data-target="#modalkonfirm" class="btn btn-sm btn-warning text-white">Cek Konfirmasi</a>
+                           <a data-toggle="modal" data-target="#modalkonfirm<?=$pesans['id_tiket'];?>" class="btn btn-sm btn-warning text-white">Cek Konfirmasi</a>
                         <?php elseif($pesans['status']==1):?>
-                           <a data-toggle="modal" data-target="#modalkonfirm" href="#" class="btn btn-sm btn-danger">Ditolak</a>
+                           <a data-toggle="modal" href="#" class="btn btn-sm btn-danger">Ditolak</a>
                         <?php elseif($pesans['status']==2):?>
                           <a data-toggle="modal" data-target="#modalaktif<?=$pesans['id_tiket'];?>"  class="btn btn-sm btn-success text-white">Tiket Aktif</a>
                         <?php elseif($pesans['status']==3):?>
@@ -152,11 +152,11 @@
                     <small class="form-text form-danger"><?= form_error('npm');?></small>
                   </div>
 
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <NO for="no_ktp">NO KTP (Nomor Induk Kependudukan)</label>
                     <input type="text" readonly="" class="form-control" required="" name="no_ktp" value="<?=$pesans['no_ktp'];?>" id="no_ktp" placeholder="NIK">
                     <small class="form-text form-danger"><?= form_error('npm');?></small>
-                  </div>
+                  </div> -->
 
                   <div class="form-group">
                    <label for="nama">Nama</label>
@@ -223,7 +223,7 @@
 
        <!-- MODAL KONFIRMASI  -->
        <?php foreach ($pesan as $pesans):?>
-        <div class="modal fade" id="modalkonfirm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalkonfirm<?=$pesans['id_tiket'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -297,9 +297,9 @@
       <?php endforeach;?>
        <!-- MODAL KONFIRMASI  -->
 
-         <!-- MODAL TUKAR TIKET  -->
-       <?php foreach ($pesan as $pesans):?>
-        <div class="modal fade" id="modalaktif<?=$pesans['id_tiket'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <!-- MODAL TUKAR TIKET  -->
+       <?php foreach ($pesan as $ps):?>
+        <div class="modal fade" id="modalaktif<?=$ps['id_tiket'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -309,14 +309,14 @@
                 </button>
               </div>
               <div class="modal-body">
-               <h3>Data tiket dengan id <b><?=$pesans['id_tiket'];?></b> akan digunakan ?</h3>
+               <h3>Data tiket dengan id <b><?=$ps['id_tiket'];?></b> akan digunakan ?</h3>
                <hr> <div class="row" style="margin-bottom:30px; margin:4px auto;">
                     <form action="<?= base_url('admin/tiket/update');?>" method="POST" class="mt-5">
-                      <input type="hidden" name="id_tiket" id="id_tiket"  value="<?=$pesans['id_tiket'];?>" readonly="" class="form-control" required="" placeholder="NIK">
-                      <input type="hidden" name="no_rek" id="no_rek"  value="<?=$pesans['no_rek'];?>" readonly="" class="form-control" required=""  placeholder="NIK">
-                      <input type="hidden" name="nama_rek" id="nama_rek"  value="<?=$pesans['nama_rek'];?>" readonly="" class="form-control" required="" placeholder="NIK">
-                      <input type="hidden"  name="tgl_tf" id="tgl_tf"  value="<?=$pesans['tgl_tf'];?>" readonly="" class="form-control" required="" placeholder="NIK">
-                      <input type="hidden" name="foto" id="foto"  value="<?=$pesans['foto'];?>"readonly="" class="form-control" required="" >
+                      <input type="hidden" name="id_tiket" id="id_tiket"  value="<?=$ps['id_tiket'];?>" readonly="" class="form-control" required="" placeholder="NIK">
+                      <input type="hidden" name="no_rek" id="no_rek"  value="<?=$ps['no_rek'];?>" readonly="" class="form-control" required=""  placeholder="NIK">
+                      <input type="hidden" name="nama_rek" id="nama_rek"  value="<?=$ps['nama_rek'];?>" readonly="" class="form-control" required="" placeholder="NIK">
+                      <input type="hidden"  name="tgl_tf" id="tgl_tf"  value="<?=$ps['tgl_tf'];?>" readonly="" class="form-control" required="" placeholder="NIK">
+                      <input type="hidden" name="foto" id="foto"  value="<?=$ps['foto'];?>"readonly="" class="form-control" required="" >
                       <input type="hidden" name="status" id="status"  value="3 readonly="" class="form-control" required="" >  
                     <button type="submit" name="btn-tolak" id="btn-tolak"  class="btn btn-primary btn-block mt-5">Simpan</button> 
                   </form> 
@@ -324,6 +324,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
       <?php endforeach;?>
        <!-- MODAL TUKAR TIKET  -->

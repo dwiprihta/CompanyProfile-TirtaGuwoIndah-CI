@@ -68,7 +68,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center mb-5">
     <div class="container" data-aos="fade-in">
       <h1>DATA PEMESANAN TIKET</h1>
-    <h2>Cari Data tiketmu (dengan mengetik No Tiket, NO KTP, email, atau No Telfon)</h2>
+    <h2>Cari Data tiketmu dengan mengetik No Telfon atau email</h2>
      <form class="form-inline" action="<?php echo base_url('tiket/search');?>" method="POST"> 
             <div class="form-group">
               <input type="text" style="width:410px" required="" class="form-control" name="tiket" id="inputAddress" placeholder="Ketik keyword"> 

@@ -39,8 +39,7 @@ class Tiket extends CI_Controller{
 				</div>');
 			redirect ('tiket');
 		}else{
-			$convert=$this->M_tiket->add();
-			echo json_encode($convert);
+			$this->M_tiket->add();
 			$this->session->set_flashdata('notif',
 			'<div class="alert alert-primary alert-dismissible fade show" role="alert">
 				<strong>SUCCESS!</strong> Data yanda berhasil diinput
@@ -88,7 +87,7 @@ class Tiket extends CI_Controller{
 						</button>
 					</div>');
 				//tarik ke form
-				redirect('tiket/search');
+				redirect('tiket');
 			}else{
 				//simpan jika berhasil
 				$this->M_tiket->add_konfirmasi();
@@ -100,7 +99,7 @@ class Tiket extends CI_Controller{
 					</button>
 				</div>');
 				//tarik ke form
-				redirect('tiket/search');
+				redirect('tiket');
 				}
 			}
 		}
